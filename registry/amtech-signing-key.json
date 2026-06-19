@@ -1,0 +1,11 @@
+{
+  "$schema": "https://amtechai.com/schemas/amtech-signing-key-v1.json",
+  "owner": "AMTECH",
+  "algorithm": "Ed25519",
+  "verificationMethod": "ed25519-canonical-json-v1",
+  "source": "https://amtechai.com/.well-known/skill-authority.json",
+  "status": "pending-publication",
+  "keyId": null,
+  "publicKeyBase64": null,
+  "note": "The live authority did not publish v1 public-key metadata when Phase 1 was prepared. Replace null fields only by mirroring the domain authority; never generate or store a private key here."
+}

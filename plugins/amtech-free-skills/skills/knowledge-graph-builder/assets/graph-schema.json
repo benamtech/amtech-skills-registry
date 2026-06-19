@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AMTECH Knowledge Graph",
+  "description": "Machine-readable output of the Knowledge Graph Builder skill: typed entity nodes, directed relationship edges with reasons, the pillar pages to publish, and an internal-linking plan. Usable directly for entity SEO and agent-readable content.",
+  "type": "object",
+  "required": ["domain", "nodes", "edges"],
+  "properties": {
+    "domain": {
+      "type": "object",
+      "required": ["name", "audience", "summary"],
+      "properties": {
+        "name": { "type": "string" },
+        "audience": { "type": "string" },
+        "summary": { "type": "string" }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "type", "rank", "description"],
+        "properties": {
+          "id": { "type": "string", "description": "Stable slug, unique within the graph." },
+          "title": { "type": "string" },
+          "type": { "enum": ["Service", "Product", "Method", "Tool", "Use Case", "Outcome", "Problem", "Industry", "Customer", "Place"] },
+          "rank": { "enum": ["pillar", "supporting", "attribute"], "description": "Node-worthiness: own page now, page later, or lives inside another node." },
+          "description": { "type": "string" },
+          "searchIntent": { "type": "string", "description": "The question a page for this node should answer. Pillars should set this." },
+          "schemaType": { "type": "string", "description": "schema.org type to use for JSON-LD when this node becomes a page." },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "target", "relationship", "reason"],
+        "properties": {
+          "source": { "type": "string", "description": "node id" },
+          "target": { "type": "string", "description": "node id" },
+          "relationship": { "enum": ["depends on", "explains", "is a kind of", "part of", "contrasts with", "serves", "produces", "located in"] },
+          "reason": { "type": "string", "description": "One sentence stating why the two nodes relate. Becomes anchor-text guidance for the internal link." }
+        }
+      }
+    },
+    "pillars": {
+      "type": "array",
+      "description": "The priority nodes to publish as their own pages, in order.",
+      "items": {
+        "type": "object",
+        "required": ["nodeId", "reason"],
+        "properties": {
+          "nodeId": { "type": "string" },
+          "reason": { "type": "string" },
+          "targetSearchIntent": { "type": "string" }
+        }
+      }
+    },
+    "internalLinks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "anchorGuidance"],
+        "properties": {
+          "from": { "type": "string", "description": "node id" },
+          "to": { "type": "string", "description": "node id" },
+          "anchorGuidance": { "type": "string", "description": "How to phrase the link text, derived from the edge reason. Never generic." }
+        }
+      }
+    },
+    "buildPrompt": { "type": "string", "description": "Copy-paste prompt to hand a writing/publishing agent to produce the first pillar pages from this graph." }
+  }
+}

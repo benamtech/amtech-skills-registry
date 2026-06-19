@@ -1,13 +1,20 @@
 {
-  "name": "amtech-agent-skills",
-  "displayName": "AMTECH Agent Skills",
-  "description": "Free, source-visible agent skills from AMTECH.",
-  "owner": "amtechai",
+  "name": "amtech",
+  "interface": {
+    "displayName": "AMTECH"
+  },
   "plugins": [
     {
       "name": "amtech-free-skills",
-      "path": "plugins/amtech-free-skills",
-      "description": "AMTECH's free standalone agent tools: okf-audit and knowledge-graph-builder."
+      "source": {
+        "source": "local",
+        "path": "./plugins/amtech-free-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }

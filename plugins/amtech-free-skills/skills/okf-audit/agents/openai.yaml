@@ -1,0 +1,6 @@
+interface:
+  display_name: "OKF Audit"
+  short_description: "Audit content for OKF and agent-readable knowledge quality."
+  default_prompt: "Audit this URL or draft for OKF and agent-readable knowledge quality."
+policy:
+  allow_implicit_invocation: true

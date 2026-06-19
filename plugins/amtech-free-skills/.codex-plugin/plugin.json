@@ -1,11 +1,35 @@
 {
   "name": "amtech-free-skills",
-  "version": "0.1.0",
-  "description": "AMTECH's free standalone agent tools: audit content for AI-readability and build a knowledge graph for SEO.",
-  "license": "MIT",
+  "version": "1.0.0",
+  "description": "AMTECH's free OKF audit and knowledge graph builder skills.",
+  "author": {
+    "name": "AMTECH"
+  },
   "homepage": "https://amtechai.com/skills",
-  "skills": [
-    "../../skills/okf-audit",
-    "../../skills/knowledge-graph-builder"
-  ]
+  "repository": "https://github.com/benamtech/amtech-skills-registry",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "knowledge-graph",
+    "okf",
+    "seo"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AMTECH Free Skills",
+    "shortDescription": "Audit AI-readable content and build knowledge graphs.",
+    "longDescription": "Two source-visible AMTECH workflows for OKF-style content audits and entity-first knowledge graph planning.",
+    "developerName": "AMTECH",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://amtechai.com/skills",
+    "defaultPrompt": [
+      "Audit this content for AI-readable knowledge quality.",
+      "Build a knowledge graph for this business or topic."
+    ],
+    "brandColor": "#000000"
+  }
 }
