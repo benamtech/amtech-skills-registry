@@ -1,0 +1,4 @@
+interface:
+  display_name: "AMTECH Article Publisher"
+  short_description: "Publish AMTECH articles into live graph."
+  default_prompt: "Use $amtech-article-publisher to publish my supplied article copy into the AMTECH article system."

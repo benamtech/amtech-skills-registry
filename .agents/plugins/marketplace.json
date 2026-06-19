@@ -1,0 +1,13 @@
+{
+  "name": "amtech-agent-skills",
+  "displayName": "AMTECH Agent Skills",
+  "description": "Free, source-visible agent skills from AMTECH.",
+  "owner": "amtechai",
+  "plugins": [
+    {
+      "name": "amtech-free-skills",
+      "path": "plugins/amtech-free-skills",
+      "description": "AMTECH's free standalone agent tools: okf-audit and knowledge-graph-builder."
+    }
+  ]
+}

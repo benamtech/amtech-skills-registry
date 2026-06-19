@@ -1,0 +1,11 @@
+{
+  "name": "amtech-free-skills",
+  "version": "0.1.0",
+  "description": "AMTECH's free standalone agent tools: audit content for AI-readability and build a knowledge graph for SEO.",
+  "license": "MIT",
+  "homepage": "https://amtechai.com/skills",
+  "skills": [
+    "../../skills/okf-audit",
+    "../../skills/knowledge-graph-builder"
+  ]
+}
