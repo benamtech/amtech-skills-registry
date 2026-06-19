@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AMTECH OKF Audit Report",
+  "type": "object",
+  "required": ["summary", "scores", "findings", "priorityFixes", "remediationPrompt"],
+  "properties": {
+    "summary": { "type": "string" },
+    "scores": {
+      "type": "object",
+      "required": ["overall", "okfReadability", "entityGraph", "discoveryRendering", "trustSourceQuality"],
+      "properties": {
+        "overall": { "type": "number", "minimum": 0, "maximum": 30 },
+        "okfReadability": { "type": "number", "minimum": 0, "maximum": 5 },
+        "entityGraph": { "type": "number", "minimum": 0, "maximum": 5 },
+        "discoveryRendering": { "type": "number", "minimum": 0, "maximum": 5 },
+        "trustSourceQuality": { "type": "number", "minimum": 0, "maximum": 5 }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "title", "detail"],
+        "properties": {
+          "severity": { "type": "string", "enum": ["high", "medium", "low"] },
+          "title": { "type": "string" },
+          "detail": { "type": "string" }
+        }
+      }
+    },
+    "missingConceptsAndEdges": { "type": "array", "items": { "type": "string" } },
+    "materializedViewOpportunities": { "type": "array", "items": { "type": "string" } },
+    "priorityFixes": { "type": "array", "items": { "type": "string" } },
+    "remediationPrompt": { "type": "string" }
+  }
+}

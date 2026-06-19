@@ -1,0 +1,185 @@
+{
+  "format": "amtech-registry-checksums-v1",
+  "digestAlgorithms": [
+    "SHA-256",
+    "SHA3-512"
+  ],
+  "skills": {
+    "amtech-article-publisher": [
+      {
+        "path": "skills/amtech-article-publisher/agents/openai.yaml",
+        "size": 236,
+        "sha256": "eccf3a50680fcd19b02bb4ea37f3f10e0c80edfa6de1594f63eee661113d0b0b",
+        "sha3_512": "b07f28c7ff04db4f851b7916f039076a1349375e4ae758b0374f9d258bdec78309d6ddbb9677885134c19117b048cae75dc9604716667e23110a37a34724ab31"
+      },
+      {
+        "path": "skills/amtech-article-publisher/LICENSE.txt",
+        "size": 743,
+        "sha256": "83924147704252984615b82aa12e363b236e83ac8c64c731f358a95144b7f8bb",
+        "sha3_512": "59fae872d3d27e40cd102ff9341649362c2b38506a012f43550cbf50bbbf3b3c05a85d7853feb01dd0a200ade98c6e414d1f7af9c96aa1e42d8117326a155ecd"
+      },
+      {
+        "path": "skills/amtech-article-publisher/SKILL.md",
+        "size": 9039,
+        "sha256": "f97229d2f2a07ea985e9143fd147e67863bd8ef65a85ab50414f906cfe32789a",
+        "sha3_512": "e7e9a8a2c22ceb54968fc29748a08d00164f8cf403613806b0faf32a5e6a7d410d26e93b50dfa5bf4b7d997d9e9c883c39269b6381019cf494bf8c88aa65c133"
+      }
+    ],
+    "amtech-article-research-writer": [
+      {
+        "path": "skills/amtech-article-research-writer/agents/openai.yaml",
+        "size": 236,
+        "sha256": "89cfc0741c91dd031f2338c7241f24ca1fc0535b0da434c2caca2384a0501aa3",
+        "sha3_512": "a10ee56bcfcf36358861aeb8ae4ddac5d127d308cc95d134e1a96d6bd7f3d008248749d3294878fcff7fe9c8a527bfd01efbdbbbeeedb56699aa2d5e367dffd6"
+      },
+      {
+        "path": "skills/amtech-article-research-writer/LICENSE.txt",
+        "size": 743,
+        "sha256": "83924147704252984615b82aa12e363b236e83ac8c64c731f358a95144b7f8bb",
+        "sha3_512": "59fae872d3d27e40cd102ff9341649362c2b38506a012f43550cbf50bbbf3b3c05a85d7853feb01dd0a200ade98c6e414d1f7af9c96aa1e42d8117326a155ecd"
+      },
+      {
+        "path": "skills/amtech-article-research-writer/references/draft-template.md",
+        "size": 2760,
+        "sha256": "a618b1db6c3b6216e0380f1795b35c970c11c29f68fa0cc09c7eef379cac342f",
+        "sha3_512": "94864286c80c39b9003a2954ec91161e9949a6862ebb07aa0b5b8542feb2fc5a04f8b3581dce50ffd832bc41881801122e6c06ecbeb954cc3ae6739c94c549ca"
+      },
+      {
+        "path": "skills/amtech-article-research-writer/references/research-workflow.md",
+        "size": 3518,
+        "sha256": "7050443e9aa708fd7680347f8242700e5e9b08693818224e4351bd01eac1d0af",
+        "sha3_512": "fc3cc5f3744e9a828240e94ff947a9fc966a9a8540ddd843a8995c97b340fde2e798b713cdb0c35fc7ae0ab0e24e77ef0456a4bb737f581984c816cebca02018"
+      },
+      {
+        "path": "skills/amtech-article-research-writer/SKILL.md",
+        "size": 4801,
+        "sha256": "3fc0a8e89cabc4bc7d53a1b84420f17440f2f8a51219d0b7ccd6ecf5a23cf3b9",
+        "sha3_512": "f017c48d3db6573401791db56b5de3600330135f7e8511e06df1f51000937ab34e3b701dca541606f82e60d3adc039fee30c1aff49cccab68b863b3135c30a36"
+      }
+    ],
+    "daily-checkin": [
+      {
+        "path": "skills/daily-checkin/LICENSE.txt",
+        "size": 743,
+        "sha256": "83924147704252984615b82aa12e363b236e83ac8c64c731f358a95144b7f8bb",
+        "sha3_512": "59fae872d3d27e40cd102ff9341649362c2b38506a012f43550cbf50bbbf3b3c05a85d7853feb01dd0a200ade98c6e414d1f7af9c96aa1e42d8117326a155ecd"
+      },
+      {
+        "path": "skills/daily-checkin/SKILL.md",
+        "size": 1763,
+        "sha256": "570a04a51ade01bacfa0e2ac84f1e46b53d5d418a1291ad1250e7e7be4da3098",
+        "sha3_512": "e95fe58b0500c755e9ca8e15a3c02e56661084a73270a8adea97f5711be7ef357efeb39f4ed3858e653d710bf8ea0b28987974752656161c1f958b0a74a6f684"
+      }
+    ],
+    "estimate": [
+      {
+        "path": "skills/estimate/LICENSE.txt",
+        "size": 743,
+        "sha256": "83924147704252984615b82aa12e363b236e83ac8c64c731f358a95144b7f8bb",
+        "sha3_512": "59fae872d3d27e40cd102ff9341649362c2b38506a012f43550cbf50bbbf3b3c05a85d7853feb01dd0a200ade98c6e414d1f7af9c96aa1e42d8117326a155ecd"
+      },
+      {
+        "path": "skills/estimate/SKILL.md",
+        "size": 1819,
+        "sha256": "cdd59eac1ba98b7e46c36c49bdacd1773e453fbe8baeb9efccd2682db626d847",
+        "sha3_512": "df379a8c9bdac6b78cd1ee7b838c28959a3b43a25e92ced3c02d959656328f33d84ee9f0890b7a618bb3d16064af44fb67bc02773ae94cc62ef60174787f2739"
+      }
+    ],
+    "invoice": [
+      {
+        "path": "skills/invoice/LICENSE.txt",
+        "size": 743,
+        "sha256": "83924147704252984615b82aa12e363b236e83ac8c64c731f358a95144b7f8bb",
+        "sha3_512": "59fae872d3d27e40cd102ff9341649362c2b38506a012f43550cbf50bbbf3b3c05a85d7853feb01dd0a200ade98c6e414d1f7af9c96aa1e42d8117326a155ecd"
+      },
+      {
+        "path": "skills/invoice/SKILL.md",
+        "size": 1672,
+        "sha256": "b38e20c24db4db1a0198cfe5eaf506b42d2766bb714c13da9f8f9de31fbbc93c",
+        "sha3_512": "7413afbcb198bdb1968d5bfc31d7af72e3f02cf28165dbecebef2638bd97f0ade1f667519a2d2b521078b03a8e1adec16d24a85f7656e6d8e256a1a2d12eaae1"
+      }
+    ],
+    "knowledge-graph-builder": [
+      {
+        "path": "skills/knowledge-graph-builder/agents/openai.yaml",
+        "size": 374,
+        "sha256": "4c06596469315de6c40abb144602809d479b03c0bfb637b851d7c4764eb0cfbf",
+        "sha3_512": "4f0be8cb480b681052587c498da9fc5f99cb4c411ab955f33278c4a6db4dcf349bddd7ae394681399abdfb20772f8512f627c947e9cee66e7d259bc46c25b1d9"
+      },
+      {
+        "path": "skills/knowledge-graph-builder/assets/graph-schema.json",
+        "size": 3375,
+        "sha256": "3b3638aec369c4da9f2ba9bdf1246b7314b2bccb489109a4cd3bad767c9eeaac",
+        "sha3_512": "b4fc3694ed0a73df0b95d568f12f35cfb4b9052dc4d2f0de22eb75e49eee19f7c1fb0e63358af51abf4c6069779a78e251c518e28271ca58e781dd46c98702e2"
+      },
+      {
+        "path": "skills/knowledge-graph-builder/LICENSE.txt",
+        "size": 743,
+        "sha256": "83924147704252984615b82aa12e363b236e83ac8c64c731f358a95144b7f8bb",
+        "sha3_512": "59fae872d3d27e40cd102ff9341649362c2b38506a012f43550cbf50bbbf3b3c05a85d7853feb01dd0a200ade98c6e414d1f7af9c96aa1e42d8117326a155ecd"
+      },
+      {
+        "path": "skills/knowledge-graph-builder/references/entity-types.md",
+        "size": 3260,
+        "sha256": "a6a87aee6413542c3483c8638254ef29934b627afa8cac112de156e8bde0aa37",
+        "sha3_512": "24776225ae4a5bb9ed57b814d2ec5a4052f6c7b4842904d24b249c9e1440aa5d9889d33a7fb5f9073c16d0cde3760be9742e518d696b95eac60f3a357833865b"
+      },
+      {
+        "path": "skills/knowledge-graph-builder/references/knowledge-graph-method.md",
+        "size": 3849,
+        "sha256": "78f17974e831580cacb788d408a7958602c533cf573878e19af5c9fa51aa3753",
+        "sha3_512": "7665ce91944a08f23d321d8a0f04a3dfbb4c882580f77915802dc517ef0cfc7a8889df5af5744bad9066fd08e81d3657cf11784e6a277d4015a016f332a0dce1"
+      },
+      {
+        "path": "skills/knowledge-graph-builder/SKILL.md",
+        "size": 5951,
+        "sha256": "0ce276e135775b66d29e64a2d4adb2838e1340051d966200e38016f993d5d887",
+        "sha3_512": "c4b57321350e2dc9efcc983c2d5b109754a9065504caae973efe133114d22067f9cee62d0dd1fce635bc6c874596d0b740580134f8a5c32e8fac4243b273bb86"
+      }
+    ],
+    "okf-audit": [
+      {
+        "path": "skills/okf-audit/agents/openai.yaml",
+        "size": 254,
+        "sha256": "430521da3999c0f405652b3cd8b37f0536e629fa9148ecec3079a1d053b5c2e4",
+        "sha3_512": "79483050dc2e4e33cec264faa46a0d13486a0e568b02e10f2c488a00fbcc26ca86066f36f443851ed367a97e39878f038c3d0ecca63203d5d61f76c8c0f5bbad"
+      },
+      {
+        "path": "skills/okf-audit/assets/report-schema.json",
+        "size": 1470,
+        "sha256": "e2f3247d7064c7a749a78c08190f4ba5499aa86111a278d7b8588c71dd5bcb5a",
+        "sha3_512": "d79b8ca05e6ef0d689b69e5c7eb56cad536c1e94179f90fffdf11e235c6678aa39fb0e7e6b7dde33d2cd7c611e5bddd57768488d323b96a1faf866a08e60c12f"
+      },
+      {
+        "path": "skills/okf-audit/LICENSE.txt",
+        "size": 743,
+        "sha256": "83924147704252984615b82aa12e363b236e83ac8c64c731f358a95144b7f8bb",
+        "sha3_512": "59fae872d3d27e40cd102ff9341649362c2b38506a012f43550cbf50bbbf3b3c05a85d7853feb01dd0a200ade98c6e414d1f7af9c96aa1e42d8117326a155ecd"
+      },
+      {
+        "path": "skills/okf-audit/references/agent-readable-content-checklist.md",
+        "size": 1527,
+        "sha256": "1341c395f8d6fde5e94269c367dbd022f13c462657ef6adfb4c8d7eb159108ba",
+        "sha3_512": "d4bd14d3d659c456e2fa18b817c90a1292054a0470b86625058b17b7a9a84f64ab9708d1e4d7efe61b35b5adbb5641214dda651fc623fc845a1e8cdb2deb0090"
+      },
+      {
+        "path": "skills/okf-audit/references/amtech-knowledge-graph-insights.md",
+        "size": 1587,
+        "sha256": "b6abba048d2752d34d2e15b3c6383d9cb61420eee86be0f77d0031dc50a5719d",
+        "sha3_512": "e3c732157e91f2e999f6a003e93c0296625407d62c2e6159b97e32f5712ef7621d7a8f22ed0b1cef593187ff5a6e3fbfe591e577bf49df202396e4ec4c5705c5"
+      },
+      {
+        "path": "skills/okf-audit/references/okf-audit-rubric.md",
+        "size": 2640,
+        "sha256": "4dc9f4c7cf82a1befe340f0255cf1824027cf06a77f5226f4b0c01624870f257",
+        "sha3_512": "1b3d3835e5ecfbae20b37dafef5f45d75fe1592788afaa8e4a7089c37c762a7de8c2f32cac9a18f942af9fadd9893e9aaddc6c21b4cf3f3a870ef9931484cc93"
+      },
+      {
+        "path": "skills/okf-audit/SKILL.md",
+        "size": 3279,
+        "sha256": "431fd709bd70bf7f4a9d3803aa930e56fed1a6fd600485aae29b1a892730aa9c",
+        "sha3_512": "2052c5001a3cd3e97cd8a069d120d744437fcb8c09da7b1c521e043fed6ea1294758f65a2ca3a086b340ace1a1cd41081a840ff2ca7fde46483c94e9b021ece2"
+      }
+    ]
+  }
+}

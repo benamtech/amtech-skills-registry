@@ -1,9 +1,20 @@
 {
-  "name": "amtech-agent-skills",
+  "name": "amtech-skills-registry",
   "description": "Free, source-visible agent skills from AMTECH. The git repository is the install source; https://amtechai.com/skills/ is the materialized-view layer (human pages, manifests, hashes, archives) generated from these folders.",
   "license": "MIT",
+  "repository": "https://github.com/benamtech/amtech-skills-registry",
   "site": "https://amtechai.com/skills",
   "authority": "https://amtechai.com/.well-known/skill-authority.json",
+  "verification": {
+    "method": "ed25519-canonical-json-v1",
+    "digestAlgorithms": [
+      "SHA-256",
+      "SHA3-512"
+    ],
+    "publicKeyMetadata": "registry/amtech-signing-key.json",
+    "checksums": "registry/checksums.json",
+    "commitPinning": "The website authority pins the exact Git commit externally; index.json never embeds its own commit."
+  },
   "categories": {
     "agent-tool": "Standalone tools any agent can run in-context from a single URL. Published and hashed at amtechai.com/skills.",
     "ai-employee": "Operational skills that ship inside a deployed AMTECH AI Employee. These are templates: {{PLACEHOLDERS}} are filled at provisioning, and they assume a working directory with ./brain/ and ./output/.",
@@ -17,7 +28,13 @@
       "version": "0.1.0",
       "path": "skills/okf-audit",
       "description": "Audit an article, website, draft, sitemap, llms.txt, markdown bundle, or OKF bundle for AI-readable knowledge quality, entity coverage, citations, and materialized views. Returns a score, findings, and a remediation prompt.",
+      "publishedOnWebsite": true,
       "canonicalUrl": "https://amtechai.com/skills/okf-audit",
+      "manifestUrl": "https://amtechai.com/skills/okf-audit/manifest.json",
+      "verification": {
+        "signed": true,
+        "status": "pending-resign"
+      },
       "scripts": "none"
     },
     {
@@ -27,7 +44,13 @@
       "version": "0.1.0",
       "path": "skills/knowledge-graph-builder",
       "description": "Generate a large knowledge graph for SEO and AI-readable content from a business, site, product, or topic: typed entity nodes, relationship edges with reasons, the pillar pages worth publishing, an internal-linking plan, and JSON-LD scaffolding.",
+      "publishedOnWebsite": true,
       "canonicalUrl": "https://amtechai.com/skills/knowledge-graph-builder",
+      "manifestUrl": "https://amtechai.com/skills/knowledge-graph-builder/manifest.json",
+      "verification": {
+        "signed": true,
+        "status": "pending-resign"
+      },
       "scripts": "none"
     },
     {
@@ -37,6 +60,7 @@
       "version": "1.0.0",
       "path": "skills/daily-checkin",
       "description": "Drives an AI Employee's scheduled morning and midday check-ins: surface the one or two things most worth the supervisor's attention, offer the highest-value office work, and stay silent when there is nothing useful to say.",
+      "publishedOnWebsite": false,
       "template": true,
       "scripts": "none"
     },
@@ -47,6 +71,7 @@
       "version": "1.0.0",
       "path": "skills/estimate",
       "description": "Create, draft, price, and send an estimate or quote for a job: gather scope, pull rates, compute a total, and produce a clean estimate file.",
+      "publishedOnWebsite": false,
       "template": true,
       "scripts": "none"
     },
@@ -57,6 +82,7 @@
       "version": "1.0.0",
       "path": "skills/invoice",
       "description": "Create, draft, and send an invoice for completed work: pull the job detail, build the invoice, and produce a file ready to send.",
+      "publishedOnWebsite": false,
       "template": true,
       "scripts": "none"
     },
@@ -67,6 +93,7 @@
       "version": "1.0.0",
       "path": "skills/amtech-article-research-writer",
       "description": "Research, plan, and draft information-gain, knowledge-graph-aware AMTECH articles from topics, notes, local documents, and external sources.",
+      "publishedOnWebsite": false,
       "portability": "amtech-oriented",
       "requiresRepositoryContext": true,
       "scripts": "none"
@@ -78,6 +105,7 @@
       "version": "1.0.0",
       "path": "skills/amtech-article-publisher",
       "description": "Publish supplied article copy into AMTECH's React article system, knowledge graph, OKF outputs, routes, and optional Supabase projection.",
+      "publishedOnWebsite": false,
       "portability": "internal-first",
       "requiresRepositoryContext": true,
       "scripts": "none"

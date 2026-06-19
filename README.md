@@ -10,20 +10,20 @@ Free, source-visible agent skills from AMTECH. Audit content for AI-readability,
 
 ### Agent tools (standalone, run in-context from one URL)
 
-| Skill | What it does | Live page |
+| Skill | What it does | Website discovery |
 | --- | --- | --- |
-| [`okf-audit`](skills/okf-audit) | Audit an article, site, draft, sitemap, `llms.txt`, or OKF bundle for AI-readable knowledge quality. Returns a score, findings, and a remediation prompt. | https://amtechai.com/skills/okf-audit |
-| [`knowledge-graph-builder`](skills/knowledge-graph-builder) | Turn a business, site, or topic into a large knowledge graph for SEO: typed entities, relationships with reasons, pillar pages to publish, an internal-linking plan, and JSON-LD scaffolding. | https://amtechai.com/skills/knowledge-graph-builder |
+| [`okf-audit`](skills/okf-audit) | Audit an article, site, draft, sitemap, `llms.txt`, or OKF bundle for AI-readable knowledge quality. Returns a score, findings, and a remediation prompt. | [Live page](https://amtechai.com/skills/okf-audit) · [Manifest](https://amtechai.com/skills/okf-audit/manifest.json) · **update in progress** |
+| [`knowledge-graph-builder`](skills/knowledge-graph-builder) | Turn a business, site, or topic into a large knowledge graph for SEO: typed entities, relationships with reasons, pillar pages to publish, an internal-linking plan, and JSON-LD scaffolding. | [Live page](https://amtechai.com/skills/knowledge-graph-builder) · [Manifest](https://amtechai.com/skills/knowledge-graph-builder/manifest.json) · **update in progress** |
 
 ### AI Employee operational skills (templates)
 
 These ship inside a deployed AMTECH AI Employee. They are **templates**: `{{PLACEHOLDERS}}` (agent name, supervisor, workloads) are filled at provisioning, and they assume a working directory with `./brain/` (durable context) and `./output/` (work product). Read them to see how an AI Employee actually operates; instantiate them through provisioning, not by hand.
 
-| Skill | What it does |
-| --- | --- |
-| [`daily-checkin`](skills/daily-checkin) | Scheduled morning/midday check-ins: surface what's worth the owner's attention, offer the highest-value work, stay silent when there's nothing useful to say. |
-| [`estimate`](skills/estimate) | Create, price, and send an estimate or quote for a job. |
-| [`invoice`](skills/invoice) | Build and send an invoice for completed work. |
+| Skill | What it does | Website discovery |
+| --- | --- | --- |
+| [`daily-checkin`](skills/daily-checkin) | Scheduled morning/midday check-ins: surface what's worth the owner's attention, offer the highest-value work, stay silent when there's nothing useful to say. | [Skills hub](https://amtechai.com/skills) — **repository-only** |
+| [`estimate`](skills/estimate) | Create, price, and send an estimate or quote for a job. | [Skills hub](https://amtechai.com/skills) — **repository-only** |
+| [`invoice`](skills/invoice) | Build and send an invoice for completed work. | [Skills hub](https://amtechai.com/skills) — **repository-only** |
 
 ### AMTECH content workflow skills
 
@@ -31,10 +31,10 @@ These packages are shared for inspection, reuse, and adaptation, but they refere
 
 They are currently repo-only packages; do not assume a corresponding `amtechai.com/skills/*` page exists until the website registry publishes one.
 
-| Skill | What it does | Portability |
+| Skill | What it does | Portability and discovery |
 | --- | --- | --- |
-| [`amtech-article-research-writer`](skills/amtech-article-research-writer) | Research, plan, and draft information-gain, knowledge-graph-aware AMTECH articles. | AMTECH-oriented; adaptable after replacing its local document and output-path references. |
-| [`amtech-article-publisher`](skills/amtech-article-publisher) | Publish supplied copy into AMTECH's React article system, knowledge graph, OKF outputs, routes, and optional Supabase projection. | **Internal-first:** intended for use in the AMTECH website repository and not a generic publisher without substantial adaptation. |
+| [`amtech-article-research-writer`](skills/amtech-article-research-writer) | Research, plan, and draft information-gain, knowledge-graph-aware AMTECH articles. | AMTECH-oriented; [skills hub](https://amtechai.com/skills) — **repository-only**. |
+| [`amtech-article-publisher`](skills/amtech-article-publisher) | Publish supplied copy into AMTECH's React article system, knowledge graph, OKF outputs, routes, and optional Supabase projection. | **Internal-first**; [skills hub](https://amtechai.com/skills) — **repository-only**. |
 
 ## Using a skill
 
@@ -53,14 +53,16 @@ The site's `use.md` is a self-bootstrapping prompt: it tells the agent what to r
 **2. Codex `$skill-installer` — install from this repo.** Point it at a skill folder's tree URL:
 
 ```
-$skill-installer install https://github.com/amtechai/agent-skills/tree/main/skills/okf-audit
+$skill-installer install https://github.com/benamtech/amtech-skills-registry/tree/main/skills/okf-audit
 ```
 
 **3. Codex plugin marketplace — install the bundle.** Add this repo as a marketplace and install the `amtech-free-skills` plugin:
 
 ```
-codex plugin marketplace add amtechai/agent-skills --ref main --sparse .agents/plugins
+codex plugin marketplace add benamtech/amtech-skills-registry --ref main
 ```
+
+Then open `/plugins` and install `amtech-free-skills` from the AMTECH marketplace.
 
 **4. Clone or copy.** Copy any `skills/<slug>/` folder into your own agent's skills directory. It is a complete, standalone skill folder.
 
@@ -81,7 +83,12 @@ index.json                                  machine-readable catalog of every sk
 skills/<slug>/                              canonical Agent Skills folders ($skill-installer / clone targets)
 .agents/plugins/marketplace.json           Codex plugin marketplace catalog
 plugins/amtech-free-skills/.codex-plugin/plugin.json   the installable plugin bundle
+plugins/amtech-free-skills/skills/          generated copies of the two published skills
+registry/checksums.json                     deterministic SHA-256 and SHA3-512 file inventory
+registry/validate.mjs                       generator and fail-closed validation entrypoint
 LICENSE                                      MIT
 ```
 
-> **Maintainer note:** the Codex plugin/marketplace JSON here is a working scaffold. Codex's plugin schema evolves — verify the field names in `marketplace.json` and `plugin.json` against the current Codex manual before publishing, and replace `amtechai/agent-skills` with the real repo path once this folder is pushed.
+## Release synchronization
+
+Changing either website-published `SKILL.md` changes its signed subject digest. The current packages are **update in progress** and `pending-resign`: do not treat the old website manifests as verification for these new bytes. See [`registry/README.md`](registry/README.md) for the Phase 2 website signing and follow-up certificate sync.
