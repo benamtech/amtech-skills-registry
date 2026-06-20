@@ -174,6 +174,41 @@ if (catalog.verification?.catalogRoot !== recomputedRoot) {
   errors.push(`catalog root mismatch: index ${catalog.verification?.catalogRoot ?? "(none)"} != recomputed ${recomputedRoot}`);
 }
 
+// Authority cross-witness (docs/skills/standard/03 §"Equivocation defense"). The registry holds a
+// byte-identical mirror of the website's signed authority chain under authority/. Independently validate it
+// here so the public git history is a SECOND witness of the same hash-chain: each record's signature verifies
+// under the mirrored key, the chain is gap-free + monotonic with linked previousRecordHash, the log's
+// latestRecordHash equals the head's canonical digest, and the head's catalogRoot equals index.json's.
+if (existsSync(join(root, "authority/log.json"))) {
+  try {
+    const rawKey = Buffer.from(keyMeta.publicKeyBase64, "base64");
+    const spki = rawKey.length === 32 ? Buffer.concat([Buffer.from("302a300506032b6570032100", "hex"), rawKey]) : rawKey;
+    const pubKey = createPublicKey({ key: spki, format: "der", type: "spki" });
+    const log = readJson("authority/log.json");
+    const entries = (log.records ?? []).slice().sort((a, b) => Number(a.sequence) - Number(b.sequence));
+    let prevHash = null;
+    let head = null;
+    for (let i = 0; i < entries.length; i++) {
+      const stem = String(entries[i].sequence).padStart(4, "0");
+      const record = readJson(`authority/records/${stem}.json`);
+      const signature = Buffer.from(readFileSync(join(root, `authority/records/${stem}.sig`), "utf8").trim(), "base64url");
+      const recordHash = digest("sha256", Buffer.from(canonical(record)));
+      if (Number(record.sequence) !== i) throw new Error(`record ${stem} sequence is not gap-free/monotonic`);
+      const linkOk = i === 0 ? record.previousRecordHash == null : record.previousRecordHash?.sha256 === prevHash;
+      if (!linkOk) throw new Error(`record ${stem} previousRecordHash does not chain`);
+      if (entries[i].recordHash !== recordHash) throw new Error(`record ${stem} log-entry hash mismatch`);
+      if (!verifySignature(null, Buffer.from(canonical(record)), pubKey, signature)) throw new Error(`record ${stem} signature does not verify`);
+      prevHash = recordHash;
+      head = record;
+    }
+    if (!head) throw new Error("authority mirror is empty");
+    if (log.latestRecordHash !== prevHash) throw new Error("log.latestRecordHash != head record digest");
+    if (head.state?.catalogRoot !== recomputedRoot) throw new Error("authority head catalogRoot != recomputed catalog root");
+  } catch (error) {
+    errors.push(`authority cross-witness: ${error.message}`);
+  }
+}
+
 if (errors.length) {
   console.error(errors.map((error) => `- ${error}`).join("\n"));
   process.exit(1);
