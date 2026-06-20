@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "amtech-signed-artifact/v2",
+  "certificateId": "amtech:skill:knowledge-graph-builder:c97167ce5efbbb0acf5319e7",
+  "subjectType": "skill",
+  "subjectId": "knowledge-graph-builder",
+  "owner": {
+    "name": "AMTECH AI",
+    "url": "https://amtechai.com"
+  },
+  "canonicalUrl": "https://amtechai.com/skills/knowledge-graph-builder",
+  "repository": {
+    "url": "https://github.com/benamtech/amtech-skills-registry",
+    "commit": "88d9ce86525d3e234a37b0c5c7b752fc2beb69bb",
+    "path": "skills/knowledge-graph-builder"
+  },
+  "version": "0.1.0",
+  "digests": {
+    "sha256": "3bb768a6fd93de086802460c773f21134e39c456ba4af99dc421a7e86deb752e",
+    "sha3_512": "c97167ce5efbbb0acf5319e7caf168d85d3acd4d00d0ebb20e5c0e065749d321aa9f82de243f5960897edf570207b1b18905be8c12be7d3fb2b6cd4be1473876"
+  },
+  "sourcePackage": {
+    "sha256": "b90edacc410ef5f94e806dd06c8c987754bc2c72e2ac8cb164a63396b5eeaabd",
+    "sha3_512": "20c81717a51b4f119659a789a95ec4736248ae5f20c9705628157e41b3254381263dc57f584dc199aef0b7773dd7483cdc9e3f28e9085143b6bc0396bdf52582"
+  },
+  "issuedAt": "2026-06-19T00:00:00.000Z",
+  "issuer": {
+    "name": "AMTECH AI",
+    "url": "https://amtechai.com"
+  },
+  "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
+  "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json",
+  "attestations": {
+    "policyVersion": "amtech-skill-policy/1",
+    "trustTier": "amtech-reviewed",
+    "permissions": {
+      "filesystem": "read-write-optional",
+      "network": "none",
+      "secrets": "none",
+      "scripts": []
+    },
+    "conformance": {
+      "suite": "amtech-skill-contract-conformance",
+      "suiteVersion": "0.1.0",
+      "method": "static-contract",
+      "sourceCommit": "88d9ce86525d3e234a37b0c5c7b752fc2beb69bb",
+      "result": "pass",
+      "ranAt": "2026-06-19T00:00:00.000Z",
+      "evidence": {
+        "url": "https://amtechai.com/skills/knowledge-graph-builder/evidence/conformance.json",
+        "sha256": "6e673e802b1f0aa23415d47b9984685b00f7276d1b1267f5f90fb62642b2f529"
+      }
+    },
+    "review": {
+      "reviewer": {
+        "type": "human",
+        "id": "amtech:reviewer:ben",
+        "name": "Ben (AMTECH)"
+      },
+      "result": "approved",
+      "reviewedAt": "2026-06-19T00:00:00.000Z",
+      "policyVersion": "amtech-skill-policy/1",
+      "evidence": {
+        "url": "https://amtechai.com/skills/knowledge-graph-builder/evidence/review.json",
+        "sha256": "9574651a9342195887c7d17b8fe1fc355b685173361f77d70bd0562141ef66c7"
+      }
+    }
+  }
+}

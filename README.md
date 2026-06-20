@@ -12,8 +12,8 @@ Free, source-visible agent skills from AMTECH. Audit content for AI-readability,
 
 | Skill | What it does | Website discovery |
 | --- | --- | --- |
-| [`okf-audit`](skills/okf-audit) | Audit an article, site, draft, sitemap, `llms.txt`, or OKF bundle for AI-readable knowledge quality. Returns a score, findings, and a remediation prompt. | [Live page](https://amtechai.com/skills/okf-audit) · [Manifest](https://amtechai.com/skills/okf-audit/manifest.json) · **update in progress** |
-| [`knowledge-graph-builder`](skills/knowledge-graph-builder) | Turn a business, site, or topic into a large knowledge graph for SEO: typed entities, relationships with reasons, pillar pages to publish, an internal-linking plan, and JSON-LD scaffolding. | [Live page](https://amtechai.com/skills/knowledge-graph-builder) · [Manifest](https://amtechai.com/skills/knowledge-graph-builder/manifest.json) · **update in progress** |
+| [`okf-audit`](skills/okf-audit) | Audit an article, site, draft, sitemap, `llms.txt`, or OKF bundle for AI-readable knowledge quality. Returns a score, findings, and a remediation prompt. | [Live page](https://amtechai.com/skills/okf-audit) · [Manifest](https://amtechai.com/skills/okf-audit/manifest.json) · **signed & verified** |
+| [`knowledge-graph-builder`](skills/knowledge-graph-builder) | Turn a business, site, or topic into a large knowledge graph for SEO: typed entities, relationships with reasons, pillar pages to publish, an internal-linking plan, and JSON-LD scaffolding. | [Live page](https://amtechai.com/skills/knowledge-graph-builder) · [Manifest](https://amtechai.com/skills/knowledge-graph-builder/manifest.json) · **signed & verified** |
 
 ### AI Employee operational skills (templates)
 
@@ -91,4 +91,4 @@ LICENSE                                      MIT
 
 ## Release synchronization
 
-Changing either website-published `SKILL.md` changes its signed subject digest. The current packages are **update in progress** and `pending-resign`: do not treat the old website manifests as verification for these new bytes. See [`registry/README.md`](registry/README.md) for the Phase 2 website signing and follow-up certificate sync.
+Changing either website-published `SKILL.md` changes its signed subject digest, which resets the package to `pending-resign` until the website re-signs and the certificate is mirrored back. Both current packages are **signed & verified**: their `amtech-signed-artifact/v2` certificates verify here against the mirrored authority key, and the cross-repo `sourcePackage` digest recomputes from `skills/<slug>/` (so the same certificate verifies on the website and in this repository). See [`registry/README.md`](registry/README.md) for the Phase 2 website signing and follow-up certificate sync.

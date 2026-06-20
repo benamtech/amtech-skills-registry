@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "amtech-signed-artifact/v2",
+  "certificateId": "amtech:skill:okf-audit:36f53231aa75bab64166abe7",
+  "subjectType": "skill",
+  "subjectId": "okf-audit",
+  "owner": {
+    "name": "AMTECH AI",
+    "url": "https://amtechai.com"
+  },
+  "canonicalUrl": "https://amtechai.com/skills/okf-audit",
+  "repository": {
+    "url": "https://github.com/benamtech/amtech-skills-registry",
+    "commit": "88d9ce86525d3e234a37b0c5c7b752fc2beb69bb",
+    "path": "skills/okf-audit"
+  },
+  "version": "0.1.0",
+  "digests": {
+    "sha256": "c7f1292b9e4b91a539b43b015186a8cc9a7220d0d9a93e62fe6e69e7a643f6a7",
+    "sha3_512": "36f53231aa75bab64166abe7c9a8f0761fa335d0f89713c7013fe0ed07e6e1f8e3641537759e8a28626d15ee868bd5766214315aca628e11e1a3da1e7fd9cb7a"
+  },
+  "sourcePackage": {
+    "sha256": "17cb62aaf3db3bb5a4b1e522450d7dbc117552af5e8c8307b414e140ea4ef58a",
+    "sha3_512": "75e250603086776d7143cb635219b601092c6d1724dc510b900a59487468845a1d26d3449a08f5c0e035d1ac81e55539b3af13eacb014fd288db01c6997d2b1b"
+  },
+  "issuedAt": "2026-06-19T00:00:00.000Z",
+  "issuer": {
+    "name": "AMTECH AI",
+    "url": "https://amtechai.com"
+  },
+  "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
+  "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json",
+  "attestations": {
+    "policyVersion": "amtech-skill-policy/1",
+    "trustTier": "amtech-reviewed",
+    "permissions": {
+      "filesystem": "read-write-optional",
+      "network": "outbound",
+      "secrets": "none",
+      "scripts": []
+    },
+    "conformance": {
+      "suite": "amtech-skill-contract-conformance",
+      "suiteVersion": "0.1.0",
+      "method": "static-contract",
+      "sourceCommit": "88d9ce86525d3e234a37b0c5c7b752fc2beb69bb",
+      "result": "pass",
+      "ranAt": "2026-06-19T00:00:00.000Z",
+      "evidence": {
+        "url": "https://amtechai.com/skills/okf-audit/evidence/conformance.json",
+        "sha256": "d3f5e50a860c764ccd0e777f1b3d811aae6076519987c1911d8a81a0db217501"
+      }
+    },
+    "review": {
+      "reviewer": {
+        "type": "human",
+        "id": "amtech:reviewer:ben",
+        "name": "Ben (AMTECH)"
+      },
+      "result": "approved",
+      "reviewedAt": "2026-06-19T00:00:00.000Z",
+      "policyVersion": "amtech-skill-policy/1",
+      "evidence": {
+        "url": "https://amtechai.com/skills/okf-audit/evidence/review.json",
+        "sha256": "c7ef42312d93cf511cd30559d4718058e286c7e12bdb2554e5468609ba3d3f99"
+      }
+    }
+  }
+}

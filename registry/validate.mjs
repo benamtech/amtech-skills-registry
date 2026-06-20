@@ -28,10 +28,13 @@ const filesUnder = (base) => {
   walk(base);
   return out;
 };
+// Cross-repo anchor (docs/skills/standard/02). MUST mirror the website's packagePayloadDigest exactly:
+// array of { path, size, contentBase64 } sorted by `path` in UTF-16 code-unit order (a GLOBAL sort of
+// the flattened file list — not the per-directory walk order), serialized with canonical JSON.
 const packagePayload = (skillPath) => Buffer.from(canonical(filesUnder(skillPath).map((path) => {
   const bytes = readFileSync(path);
   return { path: relative(skillPath, path).split("\\").join("/"), size: bytes.length, contentBase64: bytes.toString("base64") };
-})));
+}).sort((a, b) => (a.path < b.path ? -1 : a.path > b.path ? 1 : 0))));
 
 const skillDirs = readdirSync(join(root, "skills"), { withFileTypes: true })
   .filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
@@ -121,23 +124,54 @@ for (const skill of catalog.skills.filter((item) => item.publishedOnWebsite)) {
     continue;
   }
   if (skill.verification.status !== "signed") { errors.push(`${skill.slug}: invalid certificate status`); continue; }
-  if (!keyMeta.publicKeyBase64 || !keyMeta.keyId) { errors.push(`${skill.slug}: signed status requires mirrored public key metadata`); continue; }
+  if (!keyMeta.publicKeyBase64 || !keyMeta.keyId || keyMeta.status !== "active") { errors.push(`${skill.slug}: signed status requires an active mirrored public key`); continue; }
   try {
     const certificate = JSON.parse(readFileSync(join(certDir, "certificate.json"), "utf8"));
-    const signature = Buffer.from(readFileSync(join(certDir, "certificate.sig"), "utf8").trim(), "base64");
+    // Signatures are emitted base64url over canonical JSON of the WHOLE v2 certificate.
+    const signature = Buffer.from(readFileSync(join(certDir, "certificate.sig"), "utf8").trim(), "base64url");
     const rawKey = Buffer.from(keyMeta.publicKeyBase64, "base64");
     const spki = rawKey.length === 32 ? Buffer.concat([Buffer.from("302a300506032b6570032100", "hex"), rawKey]) : rawKey;
+    // 1) schema + identity key binding (mirror of the website's verifyCertificate).
+    if (certificate.schemaVersion !== "amtech-signed-artifact/v2") throw new Error("certificate is not amtech-signed-artifact/v2");
+    if (certificate.signingKeyId !== keyMeta.keyId) throw new Error("certificate signingKeyId does not match mirrored key");
+    // 2) Ed25519 over canonical JSON — the SAME signed bytes verify here as on the website.
     if (!verifySignature(null, Buffer.from(canonical(certificate)), createPublicKey({ key: spki, format: "der", type: "spki" }), signature)) throw new Error("signature mismatch");
-    const subject = certificate.subject ?? {};
+    // 3) identity / provenance fields.
+    if (certificate.owner?.url !== "https://amtechai.com" || !certificate.owner?.name) throw new Error("certificate owner mismatch");
+    if (certificate.subjectId !== skill.slug || certificate.version !== skill.version) throw new Error("certificate identity fields mismatch");
+    const repo = certificate.repository ?? {};
+    if (repo.url !== catalog.repository || repo.path !== skill.path || !/^[0-9a-f]{40}$/.test(repo.commit ?? "")) throw new Error("certificate repository fields mismatch");
+    // 4) cross-repo proof: recompute sourcePackage over THIS repo's source and require equality.
     const payload = packagePayload(join(root, skill.path));
-    if (certificate.owner !== keyMeta.owner || subject.name !== skill.slug || subject.version !== skill.version || subject.repository !== catalog.repository || subject.path !== skill.path || !/^[0-9a-f]{40}$/.test(subject.commit ?? "")) throw new Error("certificate identity fields mismatch");
-    if (subject.digests?.["SHA-256"] !== digest("sha256", payload) || subject.digests?.["SHA3-512"] !== digest("sha3-512", payload)) throw new Error("certificate subject digests mismatch");
+    if (certificate.sourcePackage?.sha256 !== digest("sha256", payload) || certificate.sourcePackage?.sha3_512 !== digest("sha3-512", payload)) throw new Error("certificate sourcePackage does not recompute from registry source");
+    // 5) attestation predicate is present and internally consistent (full re-assertion lives on the website).
+    const att = certificate.attestations;
+    if (!att) throw new Error("certificate has no attestations");
+    if (att.conformance?.sourceCommit !== repo.commit) throw new Error("conformance sourceCommit != repository commit");
+    if (att.conformance?.result !== "pass") throw new Error("conformance result is not pass");
+    if (att.trustTier === "amtech-reviewed" && att.review?.result !== "approved") throw new Error("amtech-reviewed requires an approved review");
+    if (skill.verification.trustTier && skill.verification.trustTier !== att.trustTier) throw new Error("index trustTier disagrees with the certificate");
+    // 6) the pinned commit's bytes equal the working tree (the cert binds repo.commit).
     for (const path of filesUnder(join(root, skill.path))) {
       const repositoryPath = relative(root, path).split("\\").join("/");
-      const committed = execFileSync("git", ["show", `${subject.commit}:${repositoryPath}`], { cwd: root, encoding: "buffer" });
+      const committed = execFileSync("git", ["show", `${repo.commit}:${repositoryPath}`], { cwd: root, encoding: "buffer" });
       if (!committed.equals(readFileSync(path))) throw new Error(`pinned commit differs at ${repositoryPath}`);
     }
   } catch (error) { errors.push(`${skill.slug}: ${error.message}`); }
+}
+
+// Set integrity — recompute the CATALOG ROOT over the mirrored certificates (docs/skills/standard/09 §4)
+// and require it to equal the value the website published. Preimage MUST match the website's
+// computeCatalogRoot exactly: canonical JSON of [{ slug, cert: sha256(<certificate.json bytes>) }] sorted
+// by slug, over the published+signed skills. Because the mirrored certs are byte-identical to the website's
+// published certificate.json, this root is the same in both repos — the cross-repo proof for the SET.
+const rootLeaves = catalog.skills
+  .filter((s) => s.publishedOnWebsite && s.verification?.status === "signed")
+  .map((s) => ({ slug: s.slug, cert: digest("sha256", readFileSync(join(root, "registry/skills", s.slug, "certificate.json"))) }))
+  .sort((a, b) => (a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0));
+const recomputedRoot = digest("sha256", canonical(rootLeaves));
+if (catalog.verification?.catalogRoot !== recomputedRoot) {
+  errors.push(`catalog root mismatch: index ${catalog.verification?.catalogRoot ?? "(none)"} != recomputed ${recomputedRoot}`);
 }
 
 if (errors.length) {
