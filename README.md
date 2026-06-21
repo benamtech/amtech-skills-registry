@@ -22,7 +22,7 @@ These ship inside a deployed AMTECH AI Employee. They are **templates**: `{{PLAC
 | Skill | What it does | Website discovery |
 | --- | --- | --- |
 | [`daily-checkin`](skills/daily-checkin) | Scheduled morning/midday check-ins: surface what's worth the owner's attention, offer the highest-value work, stay silent when there's nothing useful to say. | [Skills hub](https://amtechai.com/skills) — **repository-only** |
-| [`estimate`](skills/estimate) | Create, price, and send an estimate or quote for a job. | [Skills hub](https://amtechai.com/skills) — **repository-only** |
+| [`estimate`](skills/estimate) | Build a clean, structured job estimate from a described job and your rates. | [Live page](https://amtechai.com/skills/estimate) · [Manifest](https://amtechai.com/skills/estimate/manifest.json) · **signed & verified** |
 | [`invoice`](skills/invoice) | Build and send an invoice for completed work. | [Skills hub](https://amtechai.com/skills) — **repository-only** |
 
 ### AMTECH content workflow skills
@@ -33,7 +33,7 @@ They are currently repo-only packages; do not assume a corresponding `amtechai.c
 
 | Skill | What it does | Portability and discovery |
 | --- | --- | --- |
-| [`amtech-article-research-writer`](skills/amtech-article-research-writer) | Research, plan, and draft information-gain, knowledge-graph-aware AMTECH articles. | AMTECH-oriented; [skills hub](https://amtechai.com/skills) — **repository-only**. |
+| [`amtech-article-research-writer`](skills/amtech-article-research-writer) | Research, plan, and draft an information-gain article brief from a topic, notes, and sources. | [Live page](https://amtechai.com/skills/amtech-article-research-writer) · [Manifest](https://amtechai.com/skills/amtech-article-research-writer/manifest.json) · **signed & verified** |
 | [`amtech-article-publisher`](skills/amtech-article-publisher) | Publish supplied copy into AMTECH's React article system, knowledge graph, OKF outputs, routes, and optional Supabase projection. | **Internal-first**; [skills hub](https://amtechai.com/skills) — **repository-only**. |
 
 ## Using a skill

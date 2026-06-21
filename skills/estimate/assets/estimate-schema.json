@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AMTECH Job Estimate",
+  "description": "Structured output for the AMTECH estimate skill (amtech-job-estimate/v1).",
+  "type": "object",
+  "required": ["customer", "job", "lineItems", "totals", "assumptions"],
+  "properties": {
+    "customer": { "type": "string" },
+    "job": { "type": "string" },
+    "lineItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["description", "category", "quantity", "unit", "unitPrice", "lineTotal"],
+        "properties": {
+          "description": { "type": "string" },
+          "category": { "type": "string", "enum": ["labor", "materials", "fee", "other"] },
+          "quantity": { "type": "number", "minimum": 0 },
+          "unit": { "type": "string" },
+          "unitPrice": { "type": "number" },
+          "lineTotal": { "type": "number" }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": ["currency", "subtotal", "grandTotal"],
+      "properties": {
+        "currency": { "type": "string" },
+        "subtotal": { "type": "number" },
+        "adjustments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "kind", "amount"],
+            "properties": {
+              "label": { "type": "string" },
+              "kind": { "type": "string", "enum": ["tax", "markup", "discount", "fee"] },
+              "amount": { "type": "number" }
+            }
+          }
+        },
+        "grandTotal": { "type": "number" }
+      }
+    },
+    "assumptions": { "type": "array", "items": { "type": "string" } }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AMTECH Article Research Brief",
+  "description": "Structured output for the AMTECH article research writer skill (amtech-article-research-brief/v1).",
+  "type": "object",
+  "required": ["meta", "uniqueInsight", "entities", "citations", "draft", "faq"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["title", "audience", "slug", "category", "status"],
+      "properties": {
+        "title": { "type": "string" },
+        "audience": { "type": "string" },
+        "slug": { "type": "string" },
+        "category": { "type": "string" },
+        "status": { "type": "string", "enum": ["draft", "ready", "published"] }
+      }
+    },
+    "uniqueInsight": { "type": "string" },
+    "entities": {
+      "type": "object",
+      "required": ["primary", "related", "internalLinks"],
+      "properties": {
+        "primary": { "type": "string" },
+        "related": { "type": "array", "items": { "type": "string" } },
+        "internalLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["target", "reason"],
+            "properties": { "target": { "type": "string" }, "reason": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "url", "why"],
+        "properties": { "source": { "type": "string" }, "url": { "type": "string" }, "why": { "type": "string" } }
+      }
+    },
+    "draft": { "type": "string" },
+    "faq": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question", "answer"],
+        "properties": { "question": { "type": "string" }, "answer": { "type": "string" } }
+      }
+    }
+  }
+}

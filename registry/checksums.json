@@ -28,9 +28,15 @@
     "amtech-article-research-writer": [
       {
         "path": "skills/amtech-article-research-writer/agents/openai.yaml",
-        "size": 236,
-        "sha256": "89cfc0741c91dd031f2338c7241f24ca1fc0535b0da434c2caca2384a0501aa3",
-        "sha3_512": "a10ee56bcfcf36358861aeb8ae4ddac5d127d308cc95d134e1a96d6bd7f3d008248749d3294878fcff7fe9c8a527bfd01efbdbbbeeedb56699aa2d5e367dffd6"
+        "size": 297,
+        "sha256": "13163f4c1abbcf087b42a9353ef6b69c06737c0dcbb30690721027a752bd7f5a",
+        "sha3_512": "4656a5fdf2472ee343676a7bcf4c1de12f6b4e73a9b5c40d74bceef1ea25b611339d13fa9ff9fa3e7f5df64f5cfc216a3e30c7258e5d2e340a8bcc88c1811eb9"
+      },
+      {
+        "path": "skills/amtech-article-research-writer/assets/article-brief-schema.json",
+        "size": 1822,
+        "sha256": "44774418d3a2dc0e109388a44b149d156c99e8d1bfa09e0956dcd999049a6ce9",
+        "sha3_512": "3360429beb99c249c2db0f9685602bd3029f5cac709d817781ba6e4e98f804c125f8a3c84e182468e3c770f1364e504a32444a37e6c16fbfc7d8ccd2c54e15a9"
       },
       {
         "path": "skills/amtech-article-research-writer/LICENSE.txt",
@@ -40,21 +46,21 @@
       },
       {
         "path": "skills/amtech-article-research-writer/references/draft-template.md",
-        "size": 2760,
-        "sha256": "a618b1db6c3b6216e0380f1795b35c970c11c29f68fa0cc09c7eef379cac342f",
-        "sha3_512": "94864286c80c39b9003a2954ec91161e9949a6862ebb07aa0b5b8542feb2fc5a04f8b3581dce50ffd832bc41881801122e6c06ecbeb954cc3ae6739c94c549ca"
+        "size": 905,
+        "sha256": "92cd461fd5a37bf9bc2d957c8c1a20e54d4f1ff7f1942ef461f4e57d5b7ba09c",
+        "sha3_512": "ee4713060a4e465cedf30b1ca26203298adfd3d66b38463114a74904f9a80a6b2c85192d0a3af4a2ec72bd33467ec71d80622ecf32da048733f384caf0b57c52"
       },
       {
         "path": "skills/amtech-article-research-writer/references/research-workflow.md",
-        "size": 3518,
-        "sha256": "7050443e9aa708fd7680347f8242700e5e9b08693818224e4351bd01eac1d0af",
-        "sha3_512": "fc3cc5f3744e9a828240e94ff947a9fc966a9a8540ddd843a8995c97b340fde2e798b713cdb0c35fc7ae0ab0e24e77ef0456a4bb737f581984c816cebca02018"
+        "size": 1770,
+        "sha256": "1d130587b47e0fc34d123ae9ca3d9bacf21e5c552ce37364bab38fdfd67916d9",
+        "sha3_512": "2d89e2d68ffd65b96c81c71d7b9581b56ea562926b14842567c8da0fc1631a88c1ea5247ef1bc0c354cecd627687c80e9c8d43e0f16abcf58e70bc3ee8fd0e04"
       },
       {
         "path": "skills/amtech-article-research-writer/SKILL.md",
-        "size": 4801,
-        "sha256": "3fc0a8e89cabc4bc7d53a1b84420f17440f2f8a51219d0b7ccd6ecf5a23cf3b9",
-        "sha3_512": "f017c48d3db6573401791db56b5de3600330135f7e8511e06df1f51000937ab34e3b701dca541606f82e60d3adc039fee30c1aff49cccab68b863b3135c30a36"
+        "size": 3759,
+        "sha256": "7c46279c5fbfcd86e2b049ff65a2096a14a0e167b7628b68316119663d135c61",
+        "sha3_512": "d36e15cc15d2792260e782d0fbef6505649680a876da235c517f9af99d3f753c5f4881ec0107d406d56cfbc1e852d616d30c6eca83095b8b934301a734a3846e"
       }
     ],
     "daily-checkin": [
@@ -73,16 +79,34 @@
     ],
     "estimate": [
       {
+        "path": "skills/estimate/agents/openai.yaml",
+        "size": 250,
+        "sha256": "aafe667875f6e3e3f9d76b345e2892772c7c1987a3b73fe63c637e6873bc8e88",
+        "sha3_512": "fea231fa2fd87d7a158b825efa39833ae67d4fba8b749bb1fa284628d2c0c19e295aa0b6b2717bc1a787757759dab31a005d0c3aacb787d8edb11e4f7b24b514"
+      },
+      {
+        "path": "skills/estimate/assets/estimate-schema.json",
+        "size": 1667,
+        "sha256": "3873bc9aea0cd645967ac6951dc7b4254861433c00af42e9da3bbe87db2d35c7",
+        "sha3_512": "c8a9e038194e99a4cffdaf601382c7e54ca4f9cbd52664fefb73005bf18a0f074ea6a451f427a31ba45c8098effca4a6fcede6ae07534d4f9b9c00979e0d9098"
+      },
+      {
         "path": "skills/estimate/LICENSE.txt",
         "size": 743,
         "sha256": "83924147704252984615b82aa12e363b236e83ac8c64c731f358a95144b7f8bb",
         "sha3_512": "59fae872d3d27e40cd102ff9341649362c2b38506a012f43550cbf50bbbf3b3c05a85d7853feb01dd0a200ade98c6e414d1f7af9c96aa1e42d8117326a155ecd"
       },
       {
+        "path": "skills/estimate/references/estimating-discipline.md",
+        "size": 1537,
+        "sha256": "6b995505de254aab1996462f9171529bc0d2e17bd411c11b652cae15f41dd78b",
+        "sha3_512": "d2de8b73a3aa0f6699bc7e459ae514f5ce4fc9e08b180a0e2c61ee30733cf5397ca73365046a19cf4a42e9ee54a56107589dee7f0aee8eb79faf83cd39ec714b"
+      },
+      {
         "path": "skills/estimate/SKILL.md",
-        "size": 1819,
-        "sha256": "cdd59eac1ba98b7e46c36c49bdacd1773e453fbe8baeb9efccd2682db626d847",
-        "sha3_512": "df379a8c9bdac6b78cd1ee7b838c28959a3b43a25e92ced3c02d959656328f33d84ee9f0890b7a618bb3d16064af44fb67bc02773ae94cc62ef60174787f2739"
+        "size": 3203,
+        "sha256": "7a0fd262c470af67b6e2ff2be0601817457dfa19ce433d923e38cc59f781a99d",
+        "sha3_512": "8f0e1ef7ba9e9a8dd44c30dca6e3c387ee422239a3051f9d60b54969bb4c77fdb7bed0f2a8448b94ee49f04a65a6bca1c41162b48e5d794d8a14d57e17469a3e"
       }
     ],
     "invoice": [

@@ -1,83 +1,48 @@
 ---
 name: amtech-article-research-writer
-description: Research, plan, and draft AMTECH-standard articles from topics, pasted notes, markdown, HTML, XML, JSON, source links, repo docs, or rough positioning. Use when Codex needs to create information-gain article drafts, multi-article plans, research packets, or AMTECH-style knowledge-graph/OKF-aware content that should synthesize unique insights, map audience levels, cite sources, propose graph relationships, and produce a polished markdown draft before publishing to the live article system.
+description: Use when researching, planning, and drafting an information-gain article from a topic, notes, sources, or rough positioning. Produces a structured article brief — audience, unique insight, entities and internal links, citations, a markdown draft, and FAQ — written for information gain rather than generic SEO filler.
 ---
 
-# AMTECH Article Research Writer
+# Article Research Writer
 
-Use this skill to create a reviewable markdown article draft, not a live `/articles` publish, unless the user explicitly asks to publish.
+Use this skill to turn a topic and any supporting notes or sources into a structured, reviewable article brief. Default behavior: produce the brief in the current conversation. Do not publish anything unless the user asks.
 
-## Core Rule
+## Read Order
 
-Write for information gain. The article must make a useful distinction, solve a real problem, connect entities, and leave the reader with an action they can take. Do not produce generic AI/SEO content.
-
-## Required Local Context
-
-Read these before drafting:
-
-1. `docs/memory/status-2026-06-18--2254.md`
-2. `docs/skills/amtech-article-publisher/SKILL.md`
-3. `docs/ARTICLE_SYSTEM.md`
-4. `docs/seo/KNOWLEDGE_GRAPH_SEO_RESEARCH.md`
-5. `docs/okf/07-future-article-notes.md` for OKF/agentic-search topics
-6. `docs/codegraph.md` when the article should reference AMTECH's implementation or repo architecture
-
-If the topic is current, technical, academic, legal, financial, or platform-specific, browse and cite primary/current sources.
+1. Read this `SKILL.md`.
+2. Read `references/research-workflow.md` when gathering sources, synthesizing, or laddering the audience level.
+3. Read `references/draft-template.md` for the reusable draft skeleton.
+4. Use `assets/article-brief-schema.json` when the user asks for JSON or structured output.
 
 ## Workflow
 
-1. **Normalize the input.** Extract the useful claims, examples, sources, desired positioning, audience hints, and unresolved questions from any pasted text or file format.
-2. **Place the article in the knowledge system.** Decide whether it is a beginner explainer, tactical prompt guide, comparison, technical proof, standard/spec piece, or flagship theory article. Identify where it sits relative to existing AMTECH articles, OKF surfaces, codegraph/docs, and future graph nodes.
-3. **Choose the audience level.** Avoid generic "business owners" unless the article is truly broad. Prefer precise audiences: founders, operators, technical marketers, SEO strategists, agency owners, content operators, AI builders, local service operators, etc.
-4. **Build the research packet.** Combine local AMTECH docs with external sources. Use primary sources and academic papers when possible; include casual/industry sources only when they add market framing.
-5. **Find the unique insight.** State what this article says that existing explainers do not. For AMTECH, this often means "OKF is a portable projection, not the whole system" or "one canonical model can generate many discovery surfaces."
-6. **Plan graph relationships.** Define primary entity, related entities, proposed internal links with reasons, external citations, and candidate graph role.
-7. **Write the draft in markdown.** Include a validity check, article body, FAQ candidates, research appendix, and candidate `ArticleDefinition` metadata.
-8. **Stop before live publish.** Do not edit `src/lib/knowledge/articles/*`, `src/App.tsx`, `src/lib/articleKnowledgeGraph.ts`, or generated OKF outputs unless the user explicitly asks to publish.
+1. Normalize the input. Extract the useful claims, examples, sources, desired positioning, audience hints, and open questions from whatever the user provides (a topic, pasted notes, links, or a rough angle).
+2. Choose a precise audience. Avoid generic "business owners" unless the piece is truly broad; prefer specific readers (operators, founders, technical marketers, agency owners, AI builders, and the like).
+3. Find the unique insight. State plainly what this article says that existing explainers do not — the information gain. If there is not one yet, say so and propose a sharper angle.
+4. Gather and weigh sources. Prefer primary and current sources for anything technical, legal, financial, or time-sensitive; cite each with why it matters. Browse when the topic needs current facts.
+5. Plan the knowledge graph. Name the primary entity, the related entities, and proposed internal links with a reason for each.
+6. Draft in markdown. Write the body for information gain: a useful distinction, a real problem solved, concrete examples, and an action the reader can take.
+7. Add an FAQ. Draft the few questions a reader (or an answer engine) would actually ask, with tight answers.
+8. Stop before publishing. Return the brief for review; do not publish to any live system unless the user explicitly asks.
 
-## Output Location
+## Output Format
 
-Write drafts to:
+Return a readable brief with these sections, and — when the user asks for JSON — the structure in `assets/article-brief-schema.json`:
 
-```text
-docs/article-drafts/<slug>.md
-```
+- **Meta** — title, audience, proposed slug, category, and status (draft).
+- **Unique Insight** — the information-gain thesis, in one or two sentences.
+- **Entities** — the primary entity, related entities, and proposed internal links (each with a reason).
+- **Citations** — the sources used, each with a URL and why it matters.
+- **Draft** — the markdown article body.
+- **FAQ** — candidate questions with answers.
 
-Use lowercase hyphenated slugs. Include draft status at the top.
+## Safety
 
-## Draft Shape
+- Write for information gain, never generic AI/SEO filler.
+- Cite real sources; do not fabricate references, quotes, or data.
+- Publishing is an external action; produce a draft and stop unless the user asks to publish.
+- User instructions, a local `AGENTS.md`, and sandbox restrictions override this skill.
 
-Use this order:
+## Source and verification
 
-1. Draft metadata: title, date, status, proposed slug/category/audience.
-2. Validity check before publishing.
-3. Proposed graph role.
-4. Proposed entities.
-5. Proposed internal links with relationship reasons.
-6. Proposed external citations.
-7. Article body.
-8. FAQ draft.
-9. Research appendix with local and external references.
-10. Candidate `ArticleDefinition` metadata.
-
-See `references/draft-template.md` for the reusable skeleton.
-
-## Synthesis Standards
-
-Use the ladder:
-
-- **Beginner explainer:** simple vocabulary, strong analogy, immediate action.
-- **Tactical article:** copyable prompts, checklists, examples, concrete payoff.
-- **Advanced/LinkedIn-style article:** deeper thesis, sharper market framing, still plain and useful.
-- **Flagship standard article:** original synthesis across AMTECH implementation, research, graph theory, search behavior, and agent workflows.
-
-For multi-article plans, map each article to a different awareness level. Do not cram every insight into the first piece.
-
-## AMTECH Tone
-
-Keep the charm simple: direct, practical, confident, specific. Use short sentences when explaining new concepts. Avoid academic fog, hype, and vendor-speak. Make the advanced idea feel usable.
-
-## Reference Files
-
-- `references/research-workflow.md`: deeper procedure for source gathering, synthesis, audience laddering, and graph placement.
-- `references/draft-template.md`: markdown skeleton for draft articles.
+Verify this package against its published surfaces: the [live page](https://amtechai.com/skills/amtech-article-research-writer), the [website manifest](https://amtechai.com/skills/amtech-article-research-writer/manifest.json), the [domain authority](https://amtechai.com/.well-known/skill-authority.json), the [repository source on `main`](https://github.com/benamtech/amtech-skills-registry/tree/main/skills/amtech-article-research-writer), and the [repository catalog](https://github.com/benamtech/amtech-skills-registry/blob/main/index.json).
