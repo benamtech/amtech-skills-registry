@@ -119,11 +119,9 @@ if (Array.isArray(manifest.skills) || String(manifest.skills).includes("..")) er
 const keyMeta = readJson("registry/amtech-signing-key.json");
 for (const skill of catalog.skills.filter((item) => item.publishedOnWebsite)) {
   const certDir = join(root, "registry/skills", skill.slug);
-  if (skill.verification.status === "pending-resign") {
-    if (existsSync(join(certDir, "certificate.json")) || existsSync(join(certDir, "certificate.sig"))) errors.push(`${skill.slug}: stale certificate present while pending-resign`);
-    continue;
-  }
-  if (skill.verification.status !== "signed") { errors.push(`${skill.slug}: invalid certificate status`); continue; }
+  // Atomic release (docs/skills/standard/02): every published skill is `signed` — there is no pending-resign
+  // window. The cross-repo proof is `sourcePackage` recomputed over THIS repo's source (not a git commit).
+  if (skill.verification.status !== "signed") { errors.push(`${skill.slug}: published skills must be status 'signed'`); continue; }
   if (!keyMeta.publicKeyBase64 || !keyMeta.keyId || keyMeta.status !== "active") { errors.push(`${skill.slug}: signed status requires an active mirrored public key`); continue; }
   try {
     const certificate = JSON.parse(readFileSync(join(certDir, "certificate.json"), "utf8"));
@@ -136,27 +134,20 @@ for (const skill of catalog.skills.filter((item) => item.publishedOnWebsite)) {
     if (certificate.signingKeyId !== keyMeta.keyId) throw new Error("certificate signingKeyId does not match mirrored key");
     // 2) Ed25519 over canonical JSON — the SAME signed bytes verify here as on the website.
     if (!verifySignature(null, Buffer.from(canonical(certificate)), createPublicKey({ key: spki, format: "der", type: "spki" }), signature)) throw new Error("signature mismatch");
-    // 3) identity / provenance fields.
+    // 3) identity / source-location fields (provenance commit is NOT bound by the cert).
     if (certificate.owner?.url !== "https://amtechai.com" || !certificate.owner?.name) throw new Error("certificate owner mismatch");
     if (certificate.subjectId !== skill.slug || certificate.version !== skill.version) throw new Error("certificate identity fields mismatch");
     const repo = certificate.repository ?? {};
-    if (repo.url !== catalog.repository || repo.path !== skill.path || !/^[0-9a-f]{40}$/.test(repo.commit ?? "")) throw new Error("certificate repository fields mismatch");
-    // 4) cross-repo proof: recompute sourcePackage over THIS repo's source and require equality.
+    if (repo.url !== catalog.repository || repo.path !== skill.path) throw new Error("certificate repository fields mismatch");
+    // 4) THE cross-repo proof: recompute sourcePackage over THIS repo's source and require equality.
     const payload = packagePayload(join(root, skill.path));
     if (certificate.sourcePackage?.sha256 !== digest("sha256", payload) || certificate.sourcePackage?.sha3_512 !== digest("sha3-512", payload)) throw new Error("certificate sourcePackage does not recompute from registry source");
     // 5) attestation predicate is present and internally consistent (full re-assertion lives on the website).
     const att = certificate.attestations;
     if (!att) throw new Error("certificate has no attestations");
-    if (att.conformance?.sourceCommit !== repo.commit) throw new Error("conformance sourceCommit != repository commit");
     if (att.conformance?.result !== "pass") throw new Error("conformance result is not pass");
     if (att.trustTier === "amtech-reviewed" && att.review?.result !== "approved") throw new Error("amtech-reviewed requires an approved review");
     if (skill.verification.trustTier && skill.verification.trustTier !== att.trustTier) throw new Error("index trustTier disagrees with the certificate");
-    // 6) the pinned commit's bytes equal the working tree (the cert binds repo.commit).
-    for (const path of filesUnder(join(root, skill.path))) {
-      const repositoryPath = relative(root, path).split("\\").join("/");
-      const committed = execFileSync("git", ["show", `${repo.commit}:${repositoryPath}`], { cwd: root, encoding: "buffer" });
-      if (!committed.equals(readFileSync(path))) throw new Error(`pinned commit differs at ${repositoryPath}`);
-    }
   } catch (error) { errors.push(`${skill.slug}: ${error.message}`); }
 }
 

@@ -10,7 +10,6 @@
   "canonicalUrl": "https://amtechai.com/skills/estimate",
   "repository": {
     "url": "https://github.com/benamtech/amtech-skills-registry",
-    "commit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
     "path": "skills/estimate"
   },
   "version": "1.0.0",
@@ -42,12 +41,11 @@
       "suite": "amtech-skill-contract-conformance",
       "suiteVersion": "0.1.0",
       "method": "static-contract",
-      "sourceCommit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
       "result": "pass",
       "ranAt": "2026-06-20T00:00:00.000Z",
       "evidence": {
         "url": "https://amtechai.com/skills/estimate/evidence/conformance.json",
-        "sha256": "16c4a58d8cc9f324eda8368af2e036202319bdf06a8f0e9c234a36164f128800"
+        "sha256": "24a1fd42a43eeb85625800586b34e6b875032c7709f74040f00c56750235ea16"
       }
     },
     "review": {

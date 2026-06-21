@@ -10,7 +10,6 @@
   "canonicalUrl": "https://amtechai.com/skills/knowledge-graph-builder",
   "repository": {
     "url": "https://github.com/benamtech/amtech-skills-registry",
-    "commit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
     "path": "skills/knowledge-graph-builder"
   },
   "version": "0.1.0",
@@ -42,12 +41,11 @@
       "suite": "amtech-skill-contract-conformance",
       "suiteVersion": "0.1.0",
       "method": "static-contract",
-      "sourceCommit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
       "result": "pass",
       "ranAt": "2026-06-19T00:00:00.000Z",
       "evidence": {
         "url": "https://amtechai.com/skills/knowledge-graph-builder/evidence/conformance.json",
-        "sha256": "354b8ff3360d25ba39a9103ffb36e2fb6d13895950bfab18eb4b01389db40549"
+        "sha256": "425a8820e6419a87cfdbca6c0ef235fed70898d271a45f2d5a16ad737f49fd13"
       }
     },
     "review": {

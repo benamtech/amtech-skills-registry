@@ -10,7 +10,6 @@
   "canonicalUrl": "https://amtechai.com/skills/amtech-article-research-writer",
   "repository": {
     "url": "https://github.com/benamtech/amtech-skills-registry",
-    "commit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
     "path": "skills/amtech-article-research-writer"
   },
   "version": "1.0.0",
@@ -42,12 +41,11 @@
       "suite": "amtech-skill-contract-conformance",
       "suiteVersion": "0.1.0",
       "method": "static-contract",
-      "sourceCommit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
       "result": "pass",
       "ranAt": "2026-06-20T00:00:00.000Z",
       "evidence": {
         "url": "https://amtechai.com/skills/amtech-article-research-writer/evidence/conformance.json",
-        "sha256": "010c7172f33cc3317442d551428474097be3ee0f6521473e94ee8d5ba7b8a084"
+        "sha256": "3d5e95a0bb81df5a812af7cc07e46bac0ddc0d175483edd35ec6b65931ae9522"
       }
     },
     "review": {

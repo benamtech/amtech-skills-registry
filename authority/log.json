@@ -1,8 +1,8 @@
 {
   "schemaVersion": "amtech-authority-log/v1",
   "authorityUrl": "https://amtechai.com/.well-known/skill-authority.json",
-  "latestSequence": "1",
-  "latestRecordHash": "d9d5b27cfc98324ed4ba350e481c05ddd3c12563140f126f8cb64ebeeb968212",
+  "latestSequence": "2",
+  "latestRecordHash": "57e9f39c744cef0621094b80248593459c6b86940b0bd70d422e9ee806889489",
   "records": [
     {
       "sequence": "0",
@@ -15,6 +15,12 @@
       "recordHash": "d9d5b27cfc98324ed4ba350e481c05ddd3c12563140f126f8cb64ebeeb968212",
       "recordUrl": "https://amtechai.com/.well-known/authority/records/0001.json",
       "signatureUrl": "https://amtechai.com/.well-known/authority/records/0001.sig"
+    },
+    {
+      "sequence": "2",
+      "recordHash": "57e9f39c744cef0621094b80248593459c6b86940b0bd70d422e9ee806889489",
+      "recordUrl": "https://amtechai.com/.well-known/authority/records/0002.json",
+      "signatureUrl": "https://amtechai.com/.well-known/authority/records/0002.sig"
     }
   ]
 }
