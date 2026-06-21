@@ -1,28 +1,28 @@
 {
   "schemaVersion": "amtech-signed-artifact/v2",
-  "certificateId": "amtech:skill:knowledge-graph-builder:c97167ce5efbbb0acf5319e7",
+  "certificateId": "amtech:skill:estimate:d325bfc1bde45b616eeb25ae",
   "subjectType": "skill",
-  "subjectId": "knowledge-graph-builder",
+  "subjectId": "estimate",
   "owner": {
     "name": "AMTECH AI",
     "url": "https://amtechai.com"
   },
-  "canonicalUrl": "https://amtechai.com/skills/knowledge-graph-builder",
+  "canonicalUrl": "https://amtechai.com/skills/estimate",
   "repository": {
     "url": "https://github.com/benamtech/amtech-skills-registry",
     "commit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
-    "path": "skills/knowledge-graph-builder"
+    "path": "skills/estimate"
   },
-  "version": "0.1.0",
+  "version": "1.0.0",
   "digests": {
-    "sha256": "3bb768a6fd93de086802460c773f21134e39c456ba4af99dc421a7e86deb752e",
-    "sha3_512": "c97167ce5efbbb0acf5319e7caf168d85d3acd4d00d0ebb20e5c0e065749d321aa9f82de243f5960897edf570207b1b18905be8c12be7d3fb2b6cd4be1473876"
+    "sha256": "b641e6fc19eff2341b774a281740f62de8a2c2b30f81fd219f20cc382d5e8596",
+    "sha3_512": "d325bfc1bde45b616eeb25ae474d196336d48826137304179a46010cce81c9410b1e6136815b33ef49a1a37b1d81bc4172b6458c2e8306a98d4225b32c76fe82"
   },
   "sourcePackage": {
-    "sha256": "b90edacc410ef5f94e806dd06c8c987754bc2c72e2ac8cb164a63396b5eeaabd",
-    "sha3_512": "20c81717a51b4f119659a789a95ec4736248ae5f20c9705628157e41b3254381263dc57f584dc199aef0b7773dd7483cdc9e3f28e9085143b6bc0396bdf52582"
+    "sha256": "27480e331ca991fdc9e9d8e442b7e6c1b3c688e7e5c6495d06a21bbcda0722c7",
+    "sha3_512": "972cc1334411126ca06e1b93944d3c21fd6f5291c4b3e3083faf460455d8cc2fca2fd8f48924b2790844f32f5622ce02bbf9b281069171e6464e9058bee5ad1e"
   },
-  "issuedAt": "2026-06-19T00:00:00.000Z",
+  "issuedAt": "2026-06-20T00:00:00.000Z",
   "issuer": {
     "name": "AMTECH AI",
     "url": "https://amtechai.com"
@@ -44,10 +44,10 @@
       "method": "static-contract",
       "sourceCommit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
       "result": "pass",
-      "ranAt": "2026-06-19T00:00:00.000Z",
+      "ranAt": "2026-06-20T00:00:00.000Z",
       "evidence": {
-        "url": "https://amtechai.com/skills/knowledge-graph-builder/evidence/conformance.json",
-        "sha256": "354b8ff3360d25ba39a9103ffb36e2fb6d13895950bfab18eb4b01389db40549"
+        "url": "https://amtechai.com/skills/estimate/evidence/conformance.json",
+        "sha256": "16c4a58d8cc9f324eda8368af2e036202319bdf06a8f0e9c234a36164f128800"
       }
     },
     "review": {
@@ -57,11 +57,11 @@
         "name": "Ben (AMTECH)"
       },
       "result": "approved",
-      "reviewedAt": "2026-06-19T00:00:00.000Z",
+      "reviewedAt": "2026-06-20T00:00:00.000Z",
       "policyVersion": "amtech-skill-policy/1",
       "evidence": {
-        "url": "https://amtechai.com/skills/knowledge-graph-builder/evidence/review.json",
-        "sha256": "9574651a9342195887c7d17b8fe1fc355b685173361f77d70bd0562141ef66c7"
+        "url": "https://amtechai.com/skills/estimate/evidence/review.json",
+        "sha256": "35e89a84126cff533931fd298e51aa94f6fad8b6b7833a2e67c4cd8a78ce5633"
       }
     }
   }

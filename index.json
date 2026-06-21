@@ -13,7 +13,7 @@
     ],
     "publicKeyMetadata": "registry/amtech-signing-key.json",
     "checksums": "registry/checksums.json",
-    "catalogRoot": "1b5e8b8a62caf26b6f352a00e436bce8692ccb901485158f37af7a0040f7eb33",
+    "catalogRoot": "0fac2bed3c1aa3627b60db1380a471144caf7b9cf024bb534208230987c518bd",
     "catalogRootPreimage": "sha256(canonicalJson([{slug, cert: sha256(certificate.json bytes)}] sorted by slug)) over the published+signed skills — recomputed by registry/validate.mjs and identical to the website's catalog.json catalogRoot.",
     "commitPinning": "The website authority pins the exact Git commit externally; index.json never embeds its own commit."
   },
@@ -94,14 +94,15 @@
       "manifestUrl": "https://amtechai.com/skills/estimate/manifest.json",
       "verification": {
         "signed": true,
-        "status": "pending-resign",
+        "status": "signed",
         "trustTier": "amtech-reviewed",
         "policyVersion": "amtech-skill-policy/1",
         "method": "static-contract",
         "evidence": {
           "conformance": "https://amtechai.com/skills/estimate/evidence/conformance.json",
           "review": "https://amtechai.com/skills/estimate/evidence/review.json"
-        }
+        },
+        "certificate": "registry/skills/estimate/certificate.json"
       },
       "scripts": "none"
     },
@@ -128,14 +129,15 @@
       "manifestUrl": "https://amtechai.com/skills/amtech-article-research-writer/manifest.json",
       "verification": {
         "signed": true,
-        "status": "pending-resign",
+        "status": "signed",
         "trustTier": "amtech-reviewed",
         "policyVersion": "amtech-skill-policy/1",
         "method": "static-contract",
         "evidence": {
           "conformance": "https://amtechai.com/skills/amtech-article-research-writer/evidence/conformance.json",
           "review": "https://amtechai.com/skills/amtech-article-research-writer/evidence/review.json"
-        }
+        },
+        "certificate": "registry/skills/amtech-article-research-writer/certificate.json"
       },
       "scripts": "none"
     },

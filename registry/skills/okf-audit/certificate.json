@@ -10,7 +10,7 @@
   "canonicalUrl": "https://amtechai.com/skills/okf-audit",
   "repository": {
     "url": "https://github.com/benamtech/amtech-skills-registry",
-    "commit": "88d9ce86525d3e234a37b0c5c7b752fc2beb69bb",
+    "commit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
     "path": "skills/okf-audit"
   },
   "version": "0.1.0",
@@ -42,12 +42,12 @@
       "suite": "amtech-skill-contract-conformance",
       "suiteVersion": "0.1.0",
       "method": "static-contract",
-      "sourceCommit": "88d9ce86525d3e234a37b0c5c7b752fc2beb69bb",
+      "sourceCommit": "d251e2151d75ac2757d13f8ce51e511b1d17681a",
       "result": "pass",
       "ranAt": "2026-06-19T00:00:00.000Z",
       "evidence": {
         "url": "https://amtechai.com/skills/okf-audit/evidence/conformance.json",
-        "sha256": "d3f5e50a860c764ccd0e777f1b3d811aae6076519987c1911d8a81a0db217501"
+        "sha256": "a0c1cd38f1a5bc55c772d4f48c8927107d72d7d66f6c59e02151d0f54bbe2c20"
       }
     },
     "review": {
