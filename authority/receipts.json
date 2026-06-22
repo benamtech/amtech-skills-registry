@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "amtech-anchor-receipts/v1",
+  "authorityUrl": "https://amtechai.com/.well-known/skill-authority.json",
+  "note": "Append-only ledger of broadcast registry-state certificates and their external anchor receipts (Bitcoin/OpenTimestamps/Nockchain/witness). Ordering is by tree size; the authority log is the chain — this is not a second hash-chain.",
+  "updatedAt": "2026-06-22T21:28:21.027Z",
+  "entries": [
+    {
+      "sequence": "0",
+      "broadcastAt": "2026-06-22T10:20:57.693Z",
+      "certificateId": "amtech:registry-state:amtech-skills-tree-6-ed0e2db175dc:6715573e34e8b13fde1a1127",
+      "treeSize": "6",
+      "rootHash": "ed0e2db175dcb94d2172ae79d2612562714219ea071f267e48dcea3d85da7a4e",
+      "stateSha256": "69d8b1697ce29d55af8ad20bd68d1ea0481d013872307173b0e4b287125c7ce3",
+      "certSha256": "20449e6553329b945d52d222f157db62a2169cd96a5cfa3c13003665daa0f665",
+      "anchorUrl": "https://amtechai.com/.well-known/authority/anchor/certificate.json",
+      "receipts": []
+    },
+    {
+      "sequence": "1",
+      "broadcastAt": "2026-06-22T20:42:37.360Z",
+      "certificateId": "amtech:registry-state:amtech-skills-tree-7-1ad02fbb2e6f:978557c6957f6c8042263179",
+      "treeSize": "7",
+      "rootHash": "1ad02fbb2e6fcb32754e0cba79ef50c2f0b932a0a818c505e2cd9e6a143b82ca",
+      "stateSha256": "80a349f3315e71d104634770091a7e51860ae86184fd7e6a6b2d6c800e4e4e26",
+      "certSha256": "5c74313213e8e4e8ab2cd0c6e8e46a7e739424389173cd9767bfc62fc088d5f3",
+      "anchorUrl": "https://amtechai.com/.well-known/authority/anchor/certificate.json",
+      "receipts": []
+    },
+    {
+      "sequence": "2",
+      "broadcastAt": "2026-06-22T20:55:44.974Z",
+      "certificateId": "amtech:registry-state:amtech-skills-tree-8-5cea455c0ea8:a510ec71844a2038b9e98a67",
+      "treeSize": "8",
+      "rootHash": "5cea455c0ea8b417d8ae8d5a342d6f49c6ad945ac5b8a3a051f8ffc09f9345e8",
+      "stateSha256": "f24f0fa11910403820e541feacb460582b01a1d3f51cd8d5e784afe53aa0f86b",
+      "certSha256": "7b04404f86a6eb833e0df7790b64e3605fdfe1dcff84a11269d14eb0b0dbeb01",
+      "anchorUrl": "https://amtechai.com/.well-known/authority/anchor/certificate.json",
+      "receipts": []
+    },
+    {
+      "sequence": "3",
+      "broadcastAt": "2026-06-22T21:24:59.924Z",
+      "certificateId": "amtech:registry-state:amtech-skills-tree-9-2ef8db4da1a3:c908db94f0d59620786c290b",
+      "treeSize": "9",
+      "rootHash": "2ef8db4da1a32e7364eaece19fdedc27d26804bfa8737ce5c73bf2d68b34777b",
+      "stateSha256": "4ba7b8dca919e46564f6d8ca012e4beaec69d4e8c77bebe673332607279c1d23",
+      "certSha256": "804c568c670f9c963b241f4feb96e596471b58e3a965ed722eaa7377c7c5123c",
+      "anchorUrl": "https://amtechai.com/.well-known/authority/anchor/certificate.json",
+      "receipts": []
+    },
+    {
+      "sequence": "4",
+      "broadcastAt": "2026-06-22T21:28:21.027Z",
+      "certificateId": "amtech:registry-state:amtech-skills-tree-10-9cfc0227bed4:20043fec27c2b47077e4704d",
+      "treeSize": "10",
+      "rootHash": "9cfc0227bed4c5ef1c628db70a9b5b0b6a3f9bb728e8a51d3272a2788a2b64ed",
+      "stateSha256": "6070eca14ee303f0648e710fb116fe6c08765eedea375444f829454bcce1ca16",
+      "certSha256": "06a3593a1535832ffaaeba6d6881a8558f16034f6740171732416695cca7fe0f",
+      "anchorUrl": "https://amtechai.com/.well-known/authority/anchor/certificate.json",
+      "receipts": []
+    }
+  ],
+  "signatures": [
+    {
+      "role": "authority",
+      "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
+      "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json",
+      "signature": "J8Bv8AYRzRF0sVXXt6PHls-jTghjJ5jAFnlR7Y-NjJUfj2k78i8xkUI-VOdjKZdJSg6P0Mpq_S72iL4w8QA4Cw"
+    }
+  ]
+}

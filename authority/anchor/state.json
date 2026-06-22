@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "amtech-registry-state/v1",
+  "authority": "AMTECH Skill Certificate Authority",
+  "authorityUrl": "https://amtechai.com/.well-known/skill-authority.json",
+  "registryUrl": "https://amtechai.com/registry",
+  "issuedAt": "2026-06-20T00:00:00.000Z",
+  "treeHead": {
+    "algorithm": "rfc6962-sha256",
+    "treeSize": "10",
+    "rootHash": "9cfc0227bed4c5ef1c628db70a9b5b0b6a3f9bb728e8a51d3272a2788a2b64ed",
+    "latestSequence": "9",
+    "latestRecordHash": "bff9d4a5de24600f780261e1b45406ab56e9d7ff707d4c8b5d3343f1acb5640a",
+    "sthUrl": "https://amtechai.com/.well-known/authority/sth.json"
+  },
+  "catalog": {
+    "catalogRoot": "322e22da77ab9398086882e93385e19c2e06337303ec30391926bbbbcc59e9b2",
+    "catalogUrl": "https://amtechai.com/skills/catalog.json",
+    "skillCount": "4"
+  },
+  "certified": [
+    {
+      "slug": "amtech-article-research-writer",
+      "version": "1.0.0",
+      "trustTier": "amtech-reviewed",
+      "status": "active",
+      "certificateId": "amtech:skill:amtech-article-research-writer:d95432e7b8718af77324ff97",
+      "certificateUrl": "https://amtechai.com/skills/amtech-article-research-writer/certificate.json",
+      "skillUrl": "https://amtechai.com/skills/amtech-article-research-writer"
+    },
+    {
+      "slug": "estimate",
+      "version": "1.0.0",
+      "trustTier": "amtech-reviewed",
+      "status": "active",
+      "certificateId": "amtech:skill:estimate:7d4f23261777c9c85990f66e",
+      "certificateUrl": "https://amtechai.com/skills/estimate/certificate.json",
+      "skillUrl": "https://amtechai.com/skills/estimate"
+    },
+    {
+      "slug": "knowledge-graph-builder",
+      "version": "0.1.0",
+      "trustTier": "amtech-reviewed",
+      "status": "active",
+      "certificateId": "amtech:skill:knowledge-graph-builder:fc84e67b4b19282796576352",
+      "certificateUrl": "https://amtechai.com/skills/knowledge-graph-builder/certificate.json",
+      "skillUrl": "https://amtechai.com/skills/knowledge-graph-builder"
+    },
+    {
+      "slug": "okf-audit",
+      "version": "0.1.0",
+      "trustTier": "amtech-reviewed",
+      "status": "active",
+      "certificateId": "amtech:skill:okf-audit:c251106617a9dc103c8d6eed",
+      "certificateUrl": "https://amtechai.com/skills/okf-audit/certificate.json",
+      "skillUrl": "https://amtechai.com/skills/okf-audit"
+    }
+  ],
+  "verify": {
+    "method": "graph-replay",
+    "note": "Recompute the Ed25519 certificates and the RFC-6962 Merkle root yourself — determinism is the security property, not this signature.",
+    "skillVerifier": "https://amtechai.com/skills/<slug> → npm run skills:verify <url>",
+    "artifactVerifier": "npm run artifact:verify -- --artifact state.json --certificate certificate.json --signature certificate.sig --key amtech-signing-key.json"
+  }
+}

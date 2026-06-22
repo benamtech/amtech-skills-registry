@@ -1,6 +1,6 @@
 {
   "schemaVersion": "amtech-signed-artifact/v2",
-  "certificateId": "amtech:skill:estimate:d325bfc1bde45b616eeb25ae",
+  "certificateId": "amtech:skill:estimate:7d4f23261777c9c85990f66e",
   "subjectType": "skill",
   "subjectId": "estimate",
   "owner": {
@@ -14,21 +14,21 @@
   },
   "version": "1.0.0",
   "digests": {
-    "sha256": "b641e6fc19eff2341b774a281740f62de8a2c2b30f81fd219f20cc382d5e8596",
-    "sha3_512": "d325bfc1bde45b616eeb25ae474d196336d48826137304179a46010cce81c9410b1e6136815b33ef49a1a37b1d81bc4172b6458c2e8306a98d4225b32c76fe82"
+    "sha256": "19ee6c98756337996a4bc6109afc361015d81e0c3e30894850b719e8e7f03ac9",
+    "sha3_512": "7d4f23261777c9c85990f66e7614ac85bbd25d258c440d3f8371d6503fb7c67d95df08c33fab5e77d5d8bfa9e6ea67c4ec41e750befe93b7c752505cdb7ef075"
   },
   "sourcePackage": {
-    "sha256": "27480e331ca991fdc9e9d8e442b7e6c1b3c688e7e5c6495d06a21bbcda0722c7",
-    "sha3_512": "972cc1334411126ca06e1b93944d3c21fd6f5291c4b3e3083faf460455d8cc2fca2fd8f48924b2790844f32f5622ce02bbf9b281069171e6464e9058bee5ad1e"
+    "sha256": "61015929858722f1040802f0e7e73362663d22c90a786e68e843e22bb8b90b4f",
+    "sha3_512": "d32604cc811b3742f4aea1d4df5256c9115551d801d4b1adfaf947f311eb26fe2f3f02062ccb53925ca3a915cac51112c7aeac3090387a309fc9365bee55d673"
   },
   "bootstrap": {
     "use": {
-      "sha256": "276eff89bd73bc424207b7fc04153c9326b28bf4223184190ad6ad52f24aec8c",
-      "sha3_512": "bffb3be6cdd2e05c7c69318902e59687d725dd2e7451e5f3e77dd99c3d588ca4175d6c35fad217219b3d475aa2108ee03d30b7160a9adb32be550a015d21f827"
+      "sha256": "2908fa6727a44f1eb4eaf36c641819fd6f80ad9c54cd15da70e10bdb0ed1aea8",
+      "sha3_512": "17a30f49870d7ea2a0a0f33c5349e1a0accffe564829677b56d37a0f8f79d985ee051d6c78433a1bd03a877fa31f0bd030cc6e467c0d1a2e107e5ad1ee92e76b"
     },
     "agent": {
-      "sha256": "5fea4431e119a9308f14321c2060ae52592db1d37fe368d5fa3609363b84e65c",
-      "sha3_512": "97d1232e3a57f4f71fa3d5c71858a77eee643b0b67f910c32969fda74e50157734da33ca805eb9ff1634ea1220e18b0970ef44232b352a80d34f001a7d0232e5"
+      "sha256": "858e24b61284fe72e35f06d3c47f608e591c0f51cacaf24814b0319eab10a78b",
+      "sha3_512": "b2bcfac411b3a768c06fdfe2ae00a055634d22b32f1d360ed8faf14ca7b8e860618c86dc2d135f03c34a54085c5921d079c95b8bc070db61509c4c9383cace5b"
     }
   },
   "issuedAt": "2026-06-20T00:00:00.000Z",
@@ -55,7 +55,7 @@
       "ranAt": "2026-06-20T00:00:00.000Z",
       "evidence": {
         "url": "https://amtechai.com/skills/estimate/evidence/conformance.json",
-        "sha256": "6f7bc2151459c64a47b6d88025ead4f72e83b3aa0c1b7785b0381b73308081b0"
+        "sha256": "01d1131b2ac72ed40d5f25487a1b9075cfa4983013afa07eda66622d9e51d7e0"
       }
     },
     "review": {

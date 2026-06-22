@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "amtech-authority-record/v1",
+  "sequence": "7",
+  "previousRecordHash": {
+    "sha256": "bbd5146a49f2cfabfc05c8c182ef7d4f0bc6a43d232ca87c1e22c3211afa12c4"
+  },
+  "issuedAt": "2026-06-20T00:00:00.000Z",
+  "authorityUrl": "https://amtechai.com/.well-known/skill-authority.json",
+  "events": [
+    {
+      "type": "skill-publish",
+      "slug": "amtech-article-research-writer",
+      "version": "1.0.0",
+      "certificateId": "amtech:skill:amtech-article-research-writer:d95432e7b8718af77324ff97",
+      "certificateSha256": "77b11f4aefbbc63ef86d5e9c650713504f7b007410616404544531274fee0406",
+      "trustTier": "amtech-reviewed"
+    },
+    {
+      "type": "skill-publish",
+      "slug": "estimate",
+      "version": "1.0.0",
+      "certificateId": "amtech:skill:estimate:d325bfc1bde45b616eeb25ae",
+      "certificateSha256": "bbd28bc3b8231d1194f7dc8ebdb02a1dc8c7291d9eb3d911d5e434827ff5482a",
+      "trustTier": "amtech-reviewed"
+    },
+    {
+      "type": "skill-publish",
+      "slug": "knowledge-graph-builder",
+      "version": "0.1.0",
+      "certificateId": "amtech:skill:knowledge-graph-builder:fc84e67b4b19282796576352",
+      "certificateSha256": "488f374905406054ff05503dd1d56de1afd22ae6df0d4aaf2d7cc610222917e6",
+      "trustTier": "amtech-reviewed"
+    },
+    {
+      "type": "skill-publish",
+      "slug": "okf-audit",
+      "version": "0.1.0",
+      "certificateId": "amtech:skill:okf-audit:c251106617a9dc103c8d6eed",
+      "certificateSha256": "91f952acfd9be5518b10b695aee3bb518cb38959f5c888741a54ab33b6f51db8",
+      "trustTier": "amtech-reviewed"
+    }
+  ],
+  "state": {
+    "catalogRoot": "1326c5d45ca02c0153bb7fd72b18c861fe0d88d5faa8226afc8aad6cb86c7945",
+    "skills": [
+      {
+        "slug": "amtech-article-research-writer",
+        "version": "1.0.0",
+        "certificateId": "amtech:skill:amtech-article-research-writer:d95432e7b8718af77324ff97",
+        "certificateSha256": "77b11f4aefbbc63ef86d5e9c650713504f7b007410616404544531274fee0406",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      },
+      {
+        "slug": "estimate",
+        "version": "1.0.0",
+        "certificateId": "amtech:skill:estimate:d325bfc1bde45b616eeb25ae",
+        "certificateSha256": "bbd28bc3b8231d1194f7dc8ebdb02a1dc8c7291d9eb3d911d5e434827ff5482a",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      },
+      {
+        "slug": "knowledge-graph-builder",
+        "version": "0.1.0",
+        "certificateId": "amtech:skill:knowledge-graph-builder:fc84e67b4b19282796576352",
+        "certificateSha256": "488f374905406054ff05503dd1d56de1afd22ae6df0d4aaf2d7cc610222917e6",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      },
+      {
+        "slug": "okf-audit",
+        "version": "0.1.0",
+        "certificateId": "amtech:skill:okf-audit:c251106617a9dc103c8d6eed",
+        "certificateSha256": "91f952acfd9be5518b10b695aee3bb518cb38959f5c888741a54ab33b6f51db8",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      }
+    ],
+    "keys": [
+      {
+        "keyId": "ed25519:2ecc5136b54f570e698487d3",
+        "status": "active",
+        "validFrom": "2026-06-19T18:36:33.228Z"
+      }
+    ]
+  },
+  "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
+  "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json"
+}

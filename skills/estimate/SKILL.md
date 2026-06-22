@@ -13,6 +13,10 @@ Use this skill to produce a clean, accurate job estimate from a described job an
 2. Read `references/estimating-discipline.md` when deciding how to handle missing rates, minimums, taxes, markups, or rounding.
 3. Use `assets/estimate-schema.json` when the user asks for JSON or structured output.
 
+## Context
+
+Before asking the user for inputs, use what your context already has. If the rates, the customer, or standing tax/markup rules are already available — in your memory, a business brain, the current repo, or earlier in this conversation — use them, and ask only for what is genuinely missing. Never invent a rate to fill a gap: an unknown rate is a question, not a guess. When you learn a new rate or rule, offer to remember it. Host-specific hints (for example `hosts/hermes.md`) say where each input lives in a given environment.
+
 ## Workflow
 
 1. Identify the job. Capture the customer (or note it is a blank template) and the scope of work, plus any measurements, quantities, or materials.
