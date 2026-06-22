@@ -156,9 +156,9 @@
       },
       {
         "path": "skills/knowledge-graph-builder/SKILL.md",
-        "size": 5951,
-        "sha256": "0ce276e135775b66d29e64a2d4adb2838e1340051d966200e38016f993d5d887",
-        "sha3_512": "c4b57321350e2dc9efcc983c2d5b109754a9065504caae973efe133114d22067f9cee62d0dd1fce635bc6c874596d0b740580134f8a5c32e8fac4243b273bb86"
+        "size": 5941,
+        "sha256": "8ab320dd4a3b9ddb9b94bd1785d560dea06b4d802b83f4cff32ecb7339b5ff9a",
+        "sha3_512": "66938b1a99c4c807361cb2d5efde5d9f44dc5a0f707c61f47d99316c60f047c20a4da1d597fbce5ed440d313bea22fe5bd9984e15a5cef3da569248cd7f6a183"
       }
     ],
     "okf-audit": [
@@ -200,9 +200,9 @@
       },
       {
         "path": "skills/okf-audit/SKILL.md",
-        "size": 3279,
-        "sha256": "431fd709bd70bf7f4a9d3803aa930e56fed1a6fd600485aae29b1a892730aa9c",
-        "sha3_512": "2052c5001a3cd3e97cd8a069d120d744437fcb8c09da7b1c521e043fed6ea1294758f65a2ca3a086b340ace1a1cd41081a840ff2ca7fde46483c94e9b021ece2"
+        "size": 3269,
+        "sha256": "9c04d8af98b25e04a5092c4f8df8900de47d39447201ea799996ea37d5a4097e",
+        "sha3_512": "1d3c678fe98164e090058e4f7d37b374ddcb534802f5ed9c2fe5ea6ce6689ac8e3029c7847674c6c96b51e64dea1772564877e4a698db786c882626933cfdbac"
       }
     ]
   }

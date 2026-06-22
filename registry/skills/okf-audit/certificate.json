@@ -1,6 +1,6 @@
 {
   "schemaVersion": "amtech-signed-artifact/v2",
-  "certificateId": "amtech:skill:okf-audit:36f53231aa75bab64166abe7",
+  "certificateId": "amtech:skill:okf-audit:c251106617a9dc103c8d6eed",
   "subjectType": "skill",
   "subjectId": "okf-audit",
   "owner": {
@@ -14,12 +14,22 @@
   },
   "version": "0.1.0",
   "digests": {
-    "sha256": "c7f1292b9e4b91a539b43b015186a8cc9a7220d0d9a93e62fe6e69e7a643f6a7",
-    "sha3_512": "36f53231aa75bab64166abe7c9a8f0761fa335d0f89713c7013fe0ed07e6e1f8e3641537759e8a28626d15ee868bd5766214315aca628e11e1a3da1e7fd9cb7a"
+    "sha256": "d95f0abcf5241028790da58307d80bf40b9cd7f5c76cb807e4fdd6f4661133c1",
+    "sha3_512": "c251106617a9dc103c8d6eed90cf699f9507768fa79fe8d444d95e75cd88e2008c1982e9cc578b664e6f68b82f4187c71854d64264a1c1f4c0c5e6836acc5046"
   },
   "sourcePackage": {
-    "sha256": "17cb62aaf3db3bb5a4b1e522450d7dbc117552af5e8c8307b414e140ea4ef58a",
-    "sha3_512": "75e250603086776d7143cb635219b601092c6d1724dc510b900a59487468845a1d26d3449a08f5c0e035d1ac81e55539b3af13eacb014fd288db01c6997d2b1b"
+    "sha256": "ba5994b7e7a0276fa87f4281d7728cf98d40799664b1f374669a43a438247aba",
+    "sha3_512": "158c96c8af31102e447937b792e39c25adfcd7fcb4484d8811d9c90a71a3584c7805bd9754dce012d25f46d92a361af54728420f82bfcecbe98e274318cb01e5"
+  },
+  "bootstrap": {
+    "use": {
+      "sha256": "0699590bf0e0ed1edc2b35c29c09939481b2c578c64c316d924afef04d00a034",
+      "sha3_512": "0ea04988ffccd36b04da74ca5940b225f27667858cb46293d878842e09d659d6d00b13496748b1356c00f1ad7a8b29d5482984a4fece9b11311beb09a7ce84f9"
+    },
+    "agent": {
+      "sha256": "6c94a952f775456c34a9316ab23b1ee0a76a076da85e057df5abdedbb30d76ea",
+      "sha3_512": "8eec6dcbb2d94cb9c328804edad753fdbef4999ac34f03b5b981d6ea669d9ac16e8f5bd994445177276bd4bca75a109930578709b7965165d8003092efc121dd"
+    }
   },
   "issuedAt": "2026-06-19T00:00:00.000Z",
   "issuer": {
@@ -45,7 +55,7 @@
       "ranAt": "2026-06-19T00:00:00.000Z",
       "evidence": {
         "url": "https://amtechai.com/skills/okf-audit/evidence/conformance.json",
-        "sha256": "97c10d294bfcceaa4a5b565146fc66a66c78c4afb2adc0e3ee04bd40c3840449"
+        "sha256": "80cc0c0db8f3212c151f191780d423fc1eeb4da1500ac96866b9f47113702cc3"
       }
     },
     "review": {

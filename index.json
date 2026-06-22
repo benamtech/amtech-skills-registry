@@ -13,7 +13,7 @@
     ],
     "publicKeyMetadata": "registry/amtech-signing-key.json",
     "checksums": "registry/checksums.json",
-    "catalogRoot": "899ed8ca828b0d11d89110fa5d5fe83f44999bd9ffc67980e2d1cb7ec8c26599",
+    "catalogRoot": "c829571e1f16dde556ad64ad53f6b8ba83873bc73843b5e72b2efe586e30f87e",
     "catalogRootPreimage": "sha256(canonicalJson([{slug, cert: sha256(certificate.json bytes)}] sorted by slug)) over the published+signed skills — recomputed by registry/validate.mjs and identical to the website's catalog.json catalogRoot.",
     "commitPinning": "The website authority pins the exact Git commit externally; index.json never embeds its own commit."
   },

@@ -65,4 +65,4 @@ If the user asks for JSON, follow `assets/report-schema.json`.
 
 ## Source and verification
 
-This package is **update in progress** pending a website re-sign. Cross-check the [live page](https://amtechai.com/skills/okf-audit), [website manifest](https://amtechai.com/skills/okf-audit/manifest.json), [domain authority](https://amtechai.com/.well-known/skill-authority.json), [repository source on `main`](https://github.com/benamtech/amtech-skills-registry/tree/main/skills/okf-audit), and [repository catalog](https://github.com/benamtech/amtech-skills-registry/blob/main/index.json).
+Verify this package against its published surfaces: the [live page](https://amtechai.com/skills/okf-audit), the [website manifest](https://amtechai.com/skills/okf-audit/manifest.json), the [domain authority](https://amtechai.com/.well-known/skill-authority.json), the [repository source on `main`](https://github.com/benamtech/amtech-skills-registry/tree/main/skills/okf-audit), and the [repository catalog](https://github.com/benamtech/amtech-skills-registry/blob/main/index.json).

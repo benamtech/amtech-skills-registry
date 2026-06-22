@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "amtech-authority-record/v1",
+  "sequence": "4",
+  "previousRecordHash": {
+    "sha256": "ba1b1d511b867cba0dc59830b6e362f5b1f552624465ca90fc1586b1581c93f6"
+  },
+  "issuedAt": "2026-06-20T00:00:00.000Z",
+  "authorityUrl": "https://amtechai.com/.well-known/skill-authority.json",
+  "events": [
+    {
+      "type": "skill-publish",
+      "slug": "knowledge-graph-builder",
+      "version": "0.1.0",
+      "certificateId": "amtech:skill:knowledge-graph-builder:fc84e67b4b19282796576352",
+      "certificateSha256": "52aff20632c6954ce249fe1e6e5cea8b20d397ebcb349bd409734892d7cddab7",
+      "trustTier": "amtech-reviewed"
+    },
+    {
+      "type": "skill-publish",
+      "slug": "okf-audit",
+      "version": "0.1.0",
+      "certificateId": "amtech:skill:okf-audit:c251106617a9dc103c8d6eed",
+      "certificateSha256": "aa3a78494b459c483fcc5959928c35de2407a284ed32cf470dfb21c5c4c5d324",
+      "trustTier": "amtech-reviewed"
+    }
+  ],
+  "state": {
+    "catalogRoot": "d029e47f935c080cea5b9756f2316dbefa086742c4b5deeb0379881f700c6db0",
+    "skills": [
+      {
+        "slug": "amtech-article-research-writer",
+        "version": "1.0.0",
+        "certificateId": "amtech:skill:amtech-article-research-writer:d95432e7b8718af77324ff97",
+        "certificateSha256": "4b593c7c96bb022bc22fe72a6a107bd43f5ef9946bd913e6ee4696100810fc7b",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      },
+      {
+        "slug": "estimate",
+        "version": "1.0.0",
+        "certificateId": "amtech:skill:estimate:d325bfc1bde45b616eeb25ae",
+        "certificateSha256": "aa7d0213868ced9557c7b619edfe3c6266f282039f5ee97e42eba3d7c17dcbdf",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      },
+      {
+        "slug": "knowledge-graph-builder",
+        "version": "0.1.0",
+        "certificateId": "amtech:skill:knowledge-graph-builder:fc84e67b4b19282796576352",
+        "certificateSha256": "52aff20632c6954ce249fe1e6e5cea8b20d397ebcb349bd409734892d7cddab7",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      },
+      {
+        "slug": "okf-audit",
+        "version": "0.1.0",
+        "certificateId": "amtech:skill:okf-audit:c251106617a9dc103c8d6eed",
+        "certificateSha256": "aa3a78494b459c483fcc5959928c35de2407a284ed32cf470dfb21c5c4c5d324",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      }
+    ],
+    "keys": [
+      {
+        "keyId": "ed25519:2ecc5136b54f570e698487d3",
+        "status": "active",
+        "validFrom": "2026-06-19T18:36:33.228Z"
+      }
+    ]
+  },
+  "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
+  "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json"
+}

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "amtech-authority-log/v1",
   "authorityUrl": "https://amtechai.com/.well-known/skill-authority.json",
-  "latestSequence": "2",
-  "latestRecordHash": "57e9f39c744cef0621094b80248593459c6b86940b0bd70d422e9ee806889489",
+  "latestSequence": "5",
+  "latestRecordHash": "d540bd4b1524837b64f064ee4958554efabce0deba58d3615d922cf9655e9055",
   "records": [
     {
       "sequence": "0",
@@ -21,6 +21,24 @@
       "recordHash": "57e9f39c744cef0621094b80248593459c6b86940b0bd70d422e9ee806889489",
       "recordUrl": "https://amtechai.com/.well-known/authority/records/0002.json",
       "signatureUrl": "https://amtechai.com/.well-known/authority/records/0002.sig"
+    },
+    {
+      "sequence": "3",
+      "recordHash": "ba1b1d511b867cba0dc59830b6e362f5b1f552624465ca90fc1586b1581c93f6",
+      "recordUrl": "https://amtechai.com/.well-known/authority/records/0003.json",
+      "signatureUrl": "https://amtechai.com/.well-known/authority/records/0003.sig"
+    },
+    {
+      "sequence": "4",
+      "recordHash": "40109eabe757d821bf5830e0b90b33de80e34492698e3f22500479551fc09444",
+      "recordUrl": "https://amtechai.com/.well-known/authority/records/0004.json",
+      "signatureUrl": "https://amtechai.com/.well-known/authority/records/0004.sig"
+    },
+    {
+      "sequence": "5",
+      "recordHash": "d540bd4b1524837b64f064ee4958554efabce0deba58d3615d922cf9655e9055",
+      "recordUrl": "https://amtechai.com/.well-known/authority/records/0005.json",
+      "signatureUrl": "https://amtechai.com/.well-known/authority/records/0005.sig"
     }
   ]
 }

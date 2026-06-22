@@ -21,6 +21,16 @@
     "sha256": "d8251c4e9ee088c63d97150fbf0ad0f3012c8e40f816f67b69448a0eab4b82e9",
     "sha3_512": "e2d848a1044bf1ee8e0b38075395a7515b4b3816fa97c646f0dd2cce5fa836ad3732feedabc3046cdc29855ae25f6c3d74d316ff6c1900b972b259a299a4d40a"
   },
+  "bootstrap": {
+    "use": {
+      "sha256": "915f71981831e88856dacc3a7b27d63d1c3e1105feb9f73e397743857c408e2b",
+      "sha3_512": "7b8460efe3011212f11fc45459069939a1f899f8e160368f89f285c6f818b798039e430403c14fa3b10003643a654073be0a1b5618f9c35fb3bea547fd8c6449"
+    },
+    "agent": {
+      "sha256": "1da0dc618504ded5ac55af2f69e67b6ac79088e41def421394802932f11656e8",
+      "sha3_512": "89c685b199184850f209085a776a57ca1d696959a7356da973a75082635d7ddea58cc0a23c06590f71e5310b54319904387e0fa6d2c748b9fab9dd930f2bb39e"
+    }
+  },
   "issuedAt": "2026-06-20T00:00:00.000Z",
   "issuer": {
     "name": "AMTECH AI",
@@ -45,7 +55,7 @@
       "ranAt": "2026-06-20T00:00:00.000Z",
       "evidence": {
         "url": "https://amtechai.com/skills/amtech-article-research-writer/evidence/conformance.json",
-        "sha256": "3d5e95a0bb81df5a812af7cc07e46bac0ddc0d175483edd35ec6b65931ae9522"
+        "sha256": "4dcc24c016f3ce4aa04e08d28fc592491a2c21177ae33da8d7c6224ad28d0baa"
       }
     },
     "review": {
