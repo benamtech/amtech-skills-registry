@@ -13,6 +13,8 @@
     ],
     "publicKeyMetadata": "registry/amtech-signing-key.json",
     "checksums": "registry/checksums.json",
+    "catalogRoot": "c829571e1f16dde556ad64ad53f6b8ba83873bc73843b5e72b2efe586e30f87e",
+    "catalogRootPreimage": "sha256(canonicalJson([{slug, cert: sha256(certificate.json bytes)}] sorted by slug)) over the published+signed skills — recomputed by registry/validate.mjs and identical to the website's catalog.json catalogRoot.",
     "commitPinning": "The website authority pins the exact Git commit externally; index.json never embeds its own commit."
   },
   "categories": {
@@ -33,7 +35,15 @@
       "manifestUrl": "https://amtechai.com/skills/okf-audit/manifest.json",
       "verification": {
         "signed": true,
-        "status": "pending-resign"
+        "status": "signed",
+        "certificate": "registry/skills/okf-audit/certificate.json",
+        "trustTier": "amtech-reviewed",
+        "policyVersion": "amtech-skill-policy/1",
+        "method": "static-contract",
+        "evidence": {
+          "conformance": "https://amtechai.com/skills/okf-audit/evidence/conformance.json",
+          "review": "https://amtechai.com/skills/okf-audit/evidence/review.json"
+        }
       },
       "scripts": "none"
     },
@@ -49,7 +59,15 @@
       "manifestUrl": "https://amtechai.com/skills/knowledge-graph-builder/manifest.json",
       "verification": {
         "signed": true,
-        "status": "pending-resign"
+        "status": "signed",
+        "certificate": "registry/skills/knowledge-graph-builder/certificate.json",
+        "trustTier": "amtech-reviewed",
+        "policyVersion": "amtech-skill-policy/1",
+        "method": "static-contract",
+        "evidence": {
+          "conformance": "https://amtechai.com/skills/knowledge-graph-builder/evidence/conformance.json",
+          "review": "https://amtechai.com/skills/knowledge-graph-builder/evidence/review.json"
+        }
       },
       "scripts": "none"
     },
@@ -67,12 +85,25 @@
     {
       "slug": "estimate",
       "title": "Estimate",
-      "category": "ai-employee",
+      "category": "agent-tool",
       "version": "1.0.0",
       "path": "skills/estimate",
-      "description": "Create, draft, price, and send an estimate or quote for a job: gather scope, pull rates, compute a total, and produce a clean estimate file.",
-      "publishedOnWebsite": false,
-      "template": true,
+      "description": "Build a clean, structured job estimate from a described job and the rates you provide: line items, totals, adjustments, and flagged assumptions.",
+      "publishedOnWebsite": true,
+      "canonicalUrl": "https://amtechai.com/skills/estimate",
+      "manifestUrl": "https://amtechai.com/skills/estimate/manifest.json",
+      "verification": {
+        "signed": true,
+        "status": "signed",
+        "trustTier": "amtech-reviewed",
+        "policyVersion": "amtech-skill-policy/1",
+        "method": "static-contract",
+        "evidence": {
+          "conformance": "https://amtechai.com/skills/estimate/evidence/conformance.json",
+          "review": "https://amtechai.com/skills/estimate/evidence/review.json"
+        },
+        "certificate": "registry/skills/estimate/certificate.json"
+      },
       "scripts": "none"
     },
     {
@@ -88,14 +119,26 @@
     },
     {
       "slug": "amtech-article-research-writer",
-      "title": "AMTECH Article Research Writer",
-      "category": "amtech-workflow",
+      "title": "Article Research Writer",
+      "category": "agent-tool",
       "version": "1.0.0",
       "path": "skills/amtech-article-research-writer",
-      "description": "Research, plan, and draft information-gain, knowledge-graph-aware AMTECH articles from topics, notes, local documents, and external sources.",
-      "publishedOnWebsite": false,
-      "portability": "amtech-oriented",
-      "requiresRepositoryContext": true,
+      "description": "Research, plan, and draft an information-gain article brief from a topic, notes, and sources: audience, unique insight, entities and internal links, citations, a markdown draft, and FAQ.",
+      "publishedOnWebsite": true,
+      "canonicalUrl": "https://amtechai.com/skills/amtech-article-research-writer",
+      "manifestUrl": "https://amtechai.com/skills/amtech-article-research-writer/manifest.json",
+      "verification": {
+        "signed": true,
+        "status": "signed",
+        "trustTier": "amtech-reviewed",
+        "policyVersion": "amtech-skill-policy/1",
+        "method": "static-contract",
+        "evidence": {
+          "conformance": "https://amtechai.com/skills/amtech-article-research-writer/evidence/conformance.json",
+          "review": "https://amtechai.com/skills/amtech-article-research-writer/evidence/review.json"
+        },
+        "certificate": "registry/skills/amtech-article-research-writer/certificate.json"
+      },
       "scripts": "none"
     },
     {

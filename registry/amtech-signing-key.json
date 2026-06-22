@@ -3,9 +3,13 @@
   "owner": "AMTECH",
   "algorithm": "Ed25519",
   "verificationMethod": "ed25519-canonical-json-v1",
-  "source": "https://amtechai.com/.well-known/skill-authority.json",
-  "status": "pending-publication",
-  "keyId": null,
-  "publicKeyBase64": null,
-  "note": "The live authority did not publish v1 public-key metadata when Phase 1 was prepared. Replace null fields only by mirroring the domain authority; never generate or store a private key here."
+  "source": "https://amtechai.com/.well-known/amtech-signing-key.json",
+  "status": "active",
+  "keyId": "ed25519:2ecc5136b54f570e698487d3",
+  "publicKeyBase64": "MCowBQYDK2VwAyEA0NdEnebdYYoR0l6+NB92sdNpqeP2QLosbePhdBj42Ic=",
+  "fingerprint": {
+    "sha256": "2ecc5136b54f570e698487d345d8bac5e8298cbe972cf7cee4c756a60576e818",
+    "sha3_512": "9a5352d7c2fd8b8c49ce796683ee2c04fb3d5f5ff439f7c7f255500a1f263e8aa877a908b052452428c15a5835b1460d0e4d8c5d36870b6b6e21d758cf738704"
+  },
+  "note": "Mirror of the domain authority's active Ed25519 public key (https://amtechai.com/.well-known/amtech-signing-key.json). publicKeyBase64 is the DER SPKI (the PEM body). Never generate or store a private key here."
 }

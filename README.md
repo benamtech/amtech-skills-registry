@@ -12,8 +12,8 @@ Free, source-visible agent skills from AMTECH. Audit content for AI-readability,
 
 | Skill | What it does | Website discovery |
 | --- | --- | --- |
-| [`okf-audit`](skills/okf-audit) | Audit an article, site, draft, sitemap, `llms.txt`, or OKF bundle for AI-readable knowledge quality. Returns a score, findings, and a remediation prompt. | [Live page](https://amtechai.com/skills/okf-audit) · [Manifest](https://amtechai.com/skills/okf-audit/manifest.json) · **update in progress** |
-| [`knowledge-graph-builder`](skills/knowledge-graph-builder) | Turn a business, site, or topic into a large knowledge graph for SEO: typed entities, relationships with reasons, pillar pages to publish, an internal-linking plan, and JSON-LD scaffolding. | [Live page](https://amtechai.com/skills/knowledge-graph-builder) · [Manifest](https://amtechai.com/skills/knowledge-graph-builder/manifest.json) · **update in progress** |
+| [`okf-audit`](skills/okf-audit) | Audit an article, site, draft, sitemap, `llms.txt`, or OKF bundle for AI-readable knowledge quality. Returns a score, findings, and a remediation prompt. | [Live page](https://amtechai.com/skills/okf-audit) · [Manifest](https://amtechai.com/skills/okf-audit/manifest.json) · **signed & verified** |
+| [`knowledge-graph-builder`](skills/knowledge-graph-builder) | Turn a business, site, or topic into a large knowledge graph for SEO: typed entities, relationships with reasons, pillar pages to publish, an internal-linking plan, and JSON-LD scaffolding. | [Live page](https://amtechai.com/skills/knowledge-graph-builder) · [Manifest](https://amtechai.com/skills/knowledge-graph-builder/manifest.json) · **signed & verified** |
 
 ### AI Employee operational skills (templates)
 
@@ -22,7 +22,7 @@ These ship inside a deployed AMTECH AI Employee. They are **templates**: `{{PLAC
 | Skill | What it does | Website discovery |
 | --- | --- | --- |
 | [`daily-checkin`](skills/daily-checkin) | Scheduled morning/midday check-ins: surface what's worth the owner's attention, offer the highest-value work, stay silent when there's nothing useful to say. | [Skills hub](https://amtechai.com/skills) — **repository-only** |
-| [`estimate`](skills/estimate) | Create, price, and send an estimate or quote for a job. | [Skills hub](https://amtechai.com/skills) — **repository-only** |
+| [`estimate`](skills/estimate) | Build a clean, structured job estimate from a described job and your rates. | [Live page](https://amtechai.com/skills/estimate) · [Manifest](https://amtechai.com/skills/estimate/manifest.json) · **signed & verified** |
 | [`invoice`](skills/invoice) | Build and send an invoice for completed work. | [Skills hub](https://amtechai.com/skills) — **repository-only** |
 
 ### AMTECH content workflow skills
@@ -33,7 +33,7 @@ They are currently repo-only packages; do not assume a corresponding `amtechai.c
 
 | Skill | What it does | Portability and discovery |
 | --- | --- | --- |
-| [`amtech-article-research-writer`](skills/amtech-article-research-writer) | Research, plan, and draft information-gain, knowledge-graph-aware AMTECH articles. | AMTECH-oriented; [skills hub](https://amtechai.com/skills) — **repository-only**. |
+| [`amtech-article-research-writer`](skills/amtech-article-research-writer) | Research, plan, and draft an information-gain article brief from a topic, notes, and sources. | [Live page](https://amtechai.com/skills/amtech-article-research-writer) · [Manifest](https://amtechai.com/skills/amtech-article-research-writer/manifest.json) · **signed & verified** |
 | [`amtech-article-publisher`](skills/amtech-article-publisher) | Publish supplied copy into AMTECH's React article system, knowledge graph, OKF outputs, routes, and optional Supabase projection. | **Internal-first**; [skills hub](https://amtechai.com/skills) — **repository-only**. |
 
 ## Using a skill
@@ -91,4 +91,4 @@ LICENSE                                      MIT
 
 ## Release synchronization
 
-Changing either website-published `SKILL.md` changes its signed subject digest. The current packages are **update in progress** and `pending-resign`: do not treat the old website manifests as verification for these new bytes. See [`registry/README.md`](registry/README.md) for the Phase 2 website signing and follow-up certificate sync.
+Changing either website-published `SKILL.md` changes its signed subject digest, which resets the package to `pending-resign` until the website re-signs and the certificate is mirrored back. Both current packages are **signed & verified**: their `amtech-signed-artifact/v2` certificates verify here against the mirrored authority key, and the cross-repo `sourcePackage` digest recomputes from `skills/<slug>/` (so the same certificate verifies on the website and in this repository). See [`registry/README.md`](registry/README.md) for the Phase 2 website signing and follow-up certificate sync.

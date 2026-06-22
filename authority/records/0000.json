@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "amtech-authority-record/v1",
+  "sequence": "0",
+  "previousRecordHash": null,
+  "issuedAt": "2026-06-19T00:00:00.000Z",
+  "authorityUrl": "https://amtechai.com/.well-known/skill-authority.json",
+  "events": [
+    {
+      "type": "genesis"
+    },
+    {
+      "type": "skill-publish",
+      "slug": "knowledge-graph-builder",
+      "version": "0.1.0",
+      "certificateId": "amtech:skill:knowledge-graph-builder:c97167ce5efbbb0acf5319e7",
+      "certificateSha256": "7f927442968da0b033ed60e54c3494641e076f9f3a819a0ac68c3e2367256fd2",
+      "trustTier": "amtech-reviewed"
+    },
+    {
+      "type": "skill-publish",
+      "slug": "okf-audit",
+      "version": "0.1.0",
+      "certificateId": "amtech:skill:okf-audit:36f53231aa75bab64166abe7",
+      "certificateSha256": "0681d0a6bf1770d59d8c345ebcf13a1eef14a91b86475f986b5c89a2b81fbe01",
+      "trustTier": "amtech-reviewed"
+    }
+  ],
+  "state": {
+    "catalogRoot": "1b5e8b8a62caf26b6f352a00e436bce8692ccb901485158f37af7a0040f7eb33",
+    "skills": [
+      {
+        "slug": "knowledge-graph-builder",
+        "version": "0.1.0",
+        "certificateId": "amtech:skill:knowledge-graph-builder:c97167ce5efbbb0acf5319e7",
+        "certificateSha256": "7f927442968da0b033ed60e54c3494641e076f9f3a819a0ac68c3e2367256fd2",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      },
+      {
+        "slug": "okf-audit",
+        "version": "0.1.0",
+        "certificateId": "amtech:skill:okf-audit:36f53231aa75bab64166abe7",
+        "certificateSha256": "0681d0a6bf1770d59d8c345ebcf13a1eef14a91b86475f986b5c89a2b81fbe01",
+        "trustTier": "amtech-reviewed",
+        "status": "active"
+      }
+    ],
+    "keys": [
+      {
+        "keyId": "ed25519:2ecc5136b54f570e698487d3",
+        "status": "active",
+        "validFrom": "2026-06-19T18:36:33.228Z"
+      }
+    ]
+  },
+  "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
+  "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json"
+}

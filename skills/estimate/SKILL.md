@@ -1,31 +1,44 @@
 ---
 name: estimate
-description: Use when {{SUPERVISOR_NAME}} asks to create, draft, price, or send an estimate or quote for a job. Covers gathering scope, pulling rates, computing a total, and producing a clean estimate file.
-version: 1.0.0
+description: Use when creating, drafting, pricing, or reviewing a job estimate or quote. Builds line items, computes totals, and returns a clean structured estimate from a described job and the rates you provide.
 ---
 
 # Estimate
 
-Produce a clean, accurate price estimate for a job and save it as a file. Do not send it to a customer without explicit confirmation.
+Use this skill to produce a clean, accurate job estimate from a described job and the rates the user provides. Default behavior: build the estimate in the current conversation and return it. Do not save files or send anything to a customer unless the user asks.
 
-## Procedure
+## Read Order
 
-1. Identify the job. Get the customer (or note it is a blank template), the scope of work, and any measurements, quantities, or materials. If a critical input is missing and you cannot reasonably assume it, ask {{SUPERVISOR_NAME}} one tight question.
-2. Pull rates from `./brain/business-brain.md` (Pricing and rates). If a needed rate is not recorded, ask for it, then write it back to the brain so the next estimate has it.
-3. Build the line items: labor, materials, and any standard fees or minimums. Show quantity, unit, unit price, and line total for each.
-4. Compute the subtotal, any tax or markup that applies, and the grand total. Check the arithmetic.
-5. Save the estimate to `./output/estimates/` as a dated, named file (for example `2026-06-18_smith-kitchen.md`).
-6. Report to {{SUPERVISOR_NAME}}: the customer, the job in a few words, and the total. Offer to send it. Do not send until they say yes.
+1. Read this `SKILL.md`.
+2. Read `references/estimating-discipline.md` when deciding how to handle missing rates, minimums, taxes, markups, or rounding.
+3. Use `assets/estimate-schema.json` when the user asks for JSON or structured output.
 
-## Pitfalls
+## Workflow
+
+1. Identify the job. Capture the customer (or note it is a blank template) and the scope of work, plus any measurements, quantities, or materials.
+2. Gather rates. Use only the rates the user provides or confirms. If a needed rate is missing and cannot be reasonably derived from another given rate, ask one tight question — never invent a price.
+3. Build the line items. For each: a description, a category (labor, materials, fee, or other), a quantity, a unit, a unit price, and a line total. Keep the arithmetic explicit.
+4. Compute the totals. Sum the line totals into a subtotal, apply any adjustments the user specifies (tax, markup, discount, fee), and compute the grand total. Check the arithmetic.
+5. Record assumptions. List every input you assumed or flagged so the reviewer can correct it.
+6. Return the estimate. Present the customer, the job, the line items, the totals, and the assumptions. Offer to save or send; do not do either until the user confirms.
+
+## Output Format
+
+Return a readable estimate with these sections, and — when the user asks for JSON — the structure in `assets/estimate-schema.json`:
+
+- **Customer** — who the estimate is for (or "blank template").
+- **Job** — a short scope summary.
+- **Line Items** — each with description, category, quantity, unit, unit price, and line total.
+- **Totals** — subtotal, any adjustments (tax / markup / discount / fee), and the grand total, with a currency.
+- **Assumptions** — every assumed or flagged input, especially any rate you had to ask for.
+
+## Safety
 
 - Never invent a rate. An estimate built on a guessed price is worse than no estimate.
-- Do not silently drop a line item you are unsure about. Flag it.
-- Sending to a customer is an external action. It goes through the confirmation gate every time.
+- Do not silently drop a line item you are unsure about — flag it under Assumptions.
+- Saving a file or sending to a customer is an external action; do it only on explicit confirmation.
+- User instructions, a local `AGENTS.md`, and sandbox restrictions override this skill.
 
-## Verification
+## Source and verification
 
-- Every line item has a quantity, a unit price, and a line total.
-- Subtotal, tax/markup, and grand total add up.
-- The customer and the job are named on the estimate.
-- The file is saved under `./output/estimates/`.
+Verify this package against its published surfaces: the [live page](https://amtechai.com/skills/estimate), the [website manifest](https://amtechai.com/skills/estimate/manifest.json), the [domain authority](https://amtechai.com/.well-known/skill-authority.json), the [repository source on `main`](https://github.com/benamtech/amtech-skills-registry/tree/main/skills/estimate), and the [repository catalog](https://github.com/benamtech/amtech-skills-registry/blob/main/index.json).

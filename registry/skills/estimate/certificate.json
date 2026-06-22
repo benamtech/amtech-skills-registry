@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "amtech-signed-artifact/v2",
+  "certificateId": "amtech:skill:estimate:d325bfc1bde45b616eeb25ae",
+  "subjectType": "skill",
+  "subjectId": "estimate",
+  "owner": {
+    "name": "AMTECH AI",
+    "url": "https://amtechai.com"
+  },
+  "canonicalUrl": "https://amtechai.com/skills/estimate",
+  "repository": {
+    "url": "https://github.com/benamtech/amtech-skills-registry",
+    "path": "skills/estimate"
+  },
+  "version": "1.0.0",
+  "digests": {
+    "sha256": "b641e6fc19eff2341b774a281740f62de8a2c2b30f81fd219f20cc382d5e8596",
+    "sha3_512": "d325bfc1bde45b616eeb25ae474d196336d48826137304179a46010cce81c9410b1e6136815b33ef49a1a37b1d81bc4172b6458c2e8306a98d4225b32c76fe82"
+  },
+  "sourcePackage": {
+    "sha256": "27480e331ca991fdc9e9d8e442b7e6c1b3c688e7e5c6495d06a21bbcda0722c7",
+    "sha3_512": "972cc1334411126ca06e1b93944d3c21fd6f5291c4b3e3083faf460455d8cc2fca2fd8f48924b2790844f32f5622ce02bbf9b281069171e6464e9058bee5ad1e"
+  },
+  "bootstrap": {
+    "use": {
+      "sha256": "276eff89bd73bc424207b7fc04153c9326b28bf4223184190ad6ad52f24aec8c",
+      "sha3_512": "bffb3be6cdd2e05c7c69318902e59687d725dd2e7451e5f3e77dd99c3d588ca4175d6c35fad217219b3d475aa2108ee03d30b7160a9adb32be550a015d21f827"
+    },
+    "agent": {
+      "sha256": "5fea4431e119a9308f14321c2060ae52592db1d37fe368d5fa3609363b84e65c",
+      "sha3_512": "97d1232e3a57f4f71fa3d5c71858a77eee643b0b67f910c32969fda74e50157734da33ca805eb9ff1634ea1220e18b0970ef44232b352a80d34f001a7d0232e5"
+    }
+  },
+  "issuedAt": "2026-06-20T00:00:00.000Z",
+  "issuer": {
+    "name": "AMTECH AI",
+    "url": "https://amtechai.com"
+  },
+  "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
+  "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json",
+  "attestations": {
+    "policyVersion": "amtech-skill-policy/1",
+    "trustTier": "amtech-reviewed",
+    "permissions": {
+      "filesystem": "read-write-optional",
+      "network": "none",
+      "secrets": "none",
+      "scripts": []
+    },
+    "conformance": {
+      "suite": "amtech-skill-contract-conformance",
+      "suiteVersion": "0.1.0",
+      "method": "static-contract",
+      "result": "pass",
+      "ranAt": "2026-06-20T00:00:00.000Z",
+      "evidence": {
+        "url": "https://amtechai.com/skills/estimate/evidence/conformance.json",
+        "sha256": "6f7bc2151459c64a47b6d88025ead4f72e83b3aa0c1b7785b0381b73308081b0"
+      }
+    },
+    "review": {
+      "reviewer": {
+        "type": "human",
+        "id": "amtech:reviewer:ben",
+        "name": "Ben (AMTECH)"
+      },
+      "result": "approved",
+      "reviewedAt": "2026-06-20T00:00:00.000Z",
+      "policyVersion": "amtech-skill-policy/1",
+      "evidence": {
+        "url": "https://amtechai.com/skills/estimate/evidence/review.json",
+        "sha256": "35e89a84126cff533931fd298e51aa94f6fad8b6b7833a2e67c4cd8a78ce5633"
+      }
+    }
+  }
+}

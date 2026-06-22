@@ -69,4 +69,4 @@ When the user asks for machine output, return JSON conforming to `assets/graph-s
 
 ## Source and verification
 
-This package is **update in progress** pending a website re-sign. Cross-check the [live page](https://amtechai.com/skills/knowledge-graph-builder), [website manifest](https://amtechai.com/skills/knowledge-graph-builder/manifest.json), [domain authority](https://amtechai.com/.well-known/skill-authority.json), [repository source on `main`](https://github.com/benamtech/amtech-skills-registry/tree/main/skills/knowledge-graph-builder), and [repository catalog](https://github.com/benamtech/amtech-skills-registry/blob/main/index.json).
+Verify this package against its published surfaces: the [live page](https://amtechai.com/skills/knowledge-graph-builder), the [website manifest](https://amtechai.com/skills/knowledge-graph-builder/manifest.json), the [domain authority](https://amtechai.com/.well-known/skill-authority.json), the [repository source on `main`](https://github.com/benamtech/amtech-skills-registry/tree/main/skills/knowledge-graph-builder), and the [repository catalog](https://github.com/benamtech/amtech-skills-registry/blob/main/index.json).

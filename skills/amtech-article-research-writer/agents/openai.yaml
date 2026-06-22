@@ -1,4 +1,6 @@
 interface:
-  display_name: "AMTECH Article Research Writer"
-  short_description: "Research and draft AMTECH-standard articles."
-  default_prompt: "Research and draft an AMTECH-standard article from my topic, notes, or source material."
+  display_name: "Article Research Writer"
+  short_description: "Research, plan, and draft an information-gain article brief from a topic and your sources."
+  default_prompt: "Research and draft an information-gain article brief on this topic."
+policy:
+  allow_implicit_invocation: true
