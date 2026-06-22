@@ -1,6 +1,6 @@
 interface:
   display_name: "Estimate"
   short_description: "Build a clean, structured job estimate from a described job and your rates."
-  default_prompt: "Create an estimate for this job using these rates."
+  default_prompt: "Create an estimate for this job using these rates. Use any rates, customer, or tax/markup rules already in your context, and ask only for what is missing — never invent a rate."
 policy:
   allow_implicit_invocation: true

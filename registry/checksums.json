@@ -80,15 +80,21 @@
     "estimate": [
       {
         "path": "skills/estimate/agents/openai.yaml",
-        "size": 250,
-        "sha256": "aafe667875f6e3e3f9d76b345e2892772c7c1987a3b73fe63c637e6873bc8e88",
-        "sha3_512": "fea231fa2fd87d7a158b825efa39833ae67d4fba8b749bb1fa284628d2c0c19e295aa0b6b2717bc1a787757759dab31a005d0c3aacb787d8edb11e4f7b24b514"
+        "size": 378,
+        "sha256": "9c04666d60084554b6c0999f27d4cb9b83f7d5ed3a52dfa58e6d97a8ca6740b6",
+        "sha3_512": "4e22f480f06814f4aaff094762dcfcd761d4c8c48de35b8b5bc6fa17e4ef999d5bc98e9833321c5eb205efde1c177f359e3124af6c99190194690656a16efa29"
       },
       {
         "path": "skills/estimate/assets/estimate-schema.json",
         "size": 1667,
         "sha256": "3873bc9aea0cd645967ac6951dc7b4254861433c00af42e9da3bbe87db2d35c7",
         "sha3_512": "c8a9e038194e99a4cffdaf601382c7e54ca4f9cbd52664fefb73005bf18a0f074ea6a451f427a31ba45c8098effca4a6fcede6ae07534d4f9b9c00979e0d9098"
+      },
+      {
+        "path": "skills/estimate/hosts/hermes.md",
+        "size": 824,
+        "sha256": "bc1863422a7f990c4e8c0a7b3f1b911b8921e1e4d7d841c9c114701162e02940",
+        "sha3_512": "931c95fb12cefbf987fd30bb7c264de2f7d724d8e729235135de77bf6d3140e38201c3e550650e609837f975000c4760b83cfc8113abc192ab2487b3aa2ff55b"
       },
       {
         "path": "skills/estimate/LICENSE.txt",
@@ -104,9 +110,9 @@
       },
       {
         "path": "skills/estimate/SKILL.md",
-        "size": 3203,
-        "sha256": "7a0fd262c470af67b6e2ff2be0601817457dfa19ce433d923e38cc59f781a99d",
-        "sha3_512": "8f0e1ef7ba9e9a8dd44c30dca6e3c387ee422239a3051f9d60b54969bb4c77fdb7bed0f2a8448b94ee49f04a65a6bca1c41162b48e5d794d8a14d57e17469a3e"
+        "size": 3750,
+        "sha256": "9e6c801a078e20a286fe3eb68ef745edf5e7a9fdcb8a151220e0d1292152b313",
+        "sha3_512": "fb749218d613fc29a6be24c3a4ca882246ce84efcc29a2df37f22a415fc2258963fe73ffc0f61657061ea147a7da1647fc23697470c73a8f1b9c723ab9e633a7"
       }
     ],
     "invoice": [

@@ -1,10 +1,10 @@
 {
   "schemaVersion": "amtech-authority-sth/v1",
   "authorityUrl": "https://amtechai.com/.well-known/skill-authority.json",
-  "treeSize": "10",
-  "rootHash": "9cfc0227bed4c5ef1c628db70a9b5b0b6a3f9bb728e8a51d3272a2788a2b64ed",
-  "latestSequence": "9",
-  "latestRecordHash": "bff9d4a5de24600f780261e1b45406ab56e9d7ff707d4c8b5d3343f1acb5640a",
+  "treeSize": "8",
+  "rootHash": "5cea455c0ea8b417d8ae8d5a342d6f49c6ad945ac5b8a3a051f8ffc09f9345e8",
+  "latestSequence": "7",
+  "latestRecordHash": "39dab9645bf7b966af65534fc923629af85594931441c13171df6532ec5c39e2",
   "timestamp": "2026-06-20T00:00:00.000Z",
   "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
   "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json",
@@ -13,7 +13,7 @@
       "role": "authority",
       "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
       "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json",
-      "signature": "Zme0oFix-gjaocIpVr9sFeBLu4sGyzoVsWNLC3CQGFAdTdKXUy75qiuXDrX5Q5rWkds_6MCobqHR5LltpfJEAA"
+      "signature": "vt8PO35eVOx7YaW_w_SzUvS5KpE09svKcLLDjYlOGIgy4okPofBXyEN-r9cFlTPUuY0w4VcPLMNKdKbNprylBw"
     }
   ],
   "anchors": []
