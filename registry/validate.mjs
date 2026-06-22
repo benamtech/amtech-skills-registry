@@ -17,6 +17,18 @@ const canonical = (value) => value === null || typeof value !== "object"
     ? `[${value.map(canonical).join(",")}]`
     : `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${canonical(value[key])}`).join(",")}}`;
 const digest = (algorithm, bytes) => createHash(algorithm).update(bytes).digest("hex");
+// RFC 6962 Merkle primitives — a byte-for-byte mirror of the website's src/lib/skills/merkle.ts so the
+// public git history is an INDEPENDENT witness of the transparency-log root. leaf = SHA-256(0x00 || entry),
+// node = SHA-256(0x01 || left || right); split at the largest power of two strictly below n.
+const leafHashHex = (entry) => digest("sha256", Buffer.concat([Buffer.from([0x00]), Buffer.isBuffer(entry) ? entry : Buffer.from(entry, "utf8")]));
+const nodeHashHex = (l, r) => digest("sha256", Buffer.concat([Buffer.from([0x01]), Buffer.from(l, "hex"), Buffer.from(r, "hex")]));
+const merkleRoot = (leaves) => {
+  if (leaves.length === 0) return digest("sha256", Buffer.alloc(0));
+  if (leaves.length === 1) return leaves[0];
+  let k = 1;
+  while (k * 2 < leaves.length) k *= 2;
+  return nodeHashHex(merkleRoot(leaves.slice(0, k)), merkleRoot(leaves.slice(k)));
+};
 const filesUnder = (base) => {
   const out = [];
   const walk = (dir) => readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name)).forEach((entry) => {
@@ -179,6 +191,7 @@ if (existsSync(join(root, "authority/log.json"))) {
     const entries = (log.records ?? []).slice().sort((a, b) => Number(a.sequence) - Number(b.sequence));
     let prevHash = null;
     let head = null;
+    const leaves = [];
     for (let i = 0; i < entries.length; i++) {
       const stem = String(entries[i].sequence).padStart(4, "0");
       const record = readJson(`authority/records/${stem}.json`);
@@ -191,10 +204,39 @@ if (existsSync(join(root, "authority/log.json"))) {
       if (!verifySignature(null, Buffer.from(canonical(record)), pubKey, signature)) throw new Error(`record ${stem} signature does not verify`);
       prevHash = recordHash;
       head = record;
+      leaves.push(leafHashHex(Buffer.from(canonical(record))));
     }
     if (!head) throw new Error("authority mirror is empty");
     if (log.latestRecordHash !== prevHash) throw new Error("log.latestRecordHash != head record digest");
     if (head.state?.catalogRoot !== recomputedRoot) throw new Error("authority head catalogRoot != recomputed catalog root");
+
+    // Transparency-log cross-witness (docs/skills/standard/03 §"Transparency log — Option B"). Recompute the
+    // RFC-6962 Merkle root over the mirrored records and confirm the signed tree head commits to it; verify the
+    // STH authority signature under the mirrored key; and confirm every archived prior STH equals the root over
+    // the first m records (an INDEPENDENT append-only proof — no consistency-proof file is trusted).
+    if (existsSync(join(root, "authority/sth.json"))) {
+      const sth = readJson("authority/sth.json");
+      const recomputedTreeRoot = merkleRoot(leaves);
+      if (sth.treeSize !== String(leaves.length)) throw new Error(`sth.treeSize ${sth.treeSize} != ${leaves.length} mirrored records`);
+      if (sth.rootHash !== recomputedTreeRoot) throw new Error("sth.rootHash != recomputed RFC-6962 Merkle root");
+      if (sth.latestRecordHash !== prevHash) throw new Error("sth.latestRecordHash != head record digest");
+      const authSig = (sth.signatures ?? []).find((s) => s.role === "authority");
+      if (!authSig?.signature) throw new Error("sth.json has no authority signature");
+      const core = { ...sth };
+      delete core.signatures;
+      delete core.anchors;
+      if (!verifySignature(null, Buffer.from(canonical(core)), pubKey, Buffer.from(authSig.signature.trim(), "base64url"))) {
+        throw new Error("sth.json authority signature does not verify");
+      }
+      if (existsSync(join(root, "authority/sth"))) {
+        for (const file of readdirSync(join(root, "authority/sth")).filter((f) => /^\d+\.json$/.test(f))) {
+          const m = Number(file.replace(".json", ""));
+          if (m > leaves.length) throw new Error(`archived STH size ${m} exceeds the log (${leaves.length})`);
+          const prior = readJson(`authority/sth/${file}`);
+          if (prior.rootHash !== merkleRoot(leaves.slice(0, m))) throw new Error(`archived STH size ${m} is not an append-only prefix of the current log`);
+        }
+      }
+    }
   } catch (error) {
     errors.push(`authority cross-witness: ${error.message}`);
   }
