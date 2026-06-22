@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "amtech-authority-sth/v1",
+  "authorityUrl": "https://amtechai.com/.well-known/skill-authority.json",
+  "treeSize": "6",
+  "rootHash": "ed0e2db175dcb94d2172ae79d2612562714219ea071f267e48dcea3d85da7a4e",
+  "latestSequence": "5",
+  "latestRecordHash": "d540bd4b1524837b64f064ee4958554efabce0deba58d3615d922cf9655e9055",
+  "timestamp": "2026-06-20T00:00:00.000Z",
+  "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
+  "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json",
+  "signatures": [
+    {
+      "role": "authority",
+      "signingKeyId": "ed25519:2ecc5136b54f570e698487d3",
+      "signingKeyUrl": "https://amtechai.com/.well-known/amtech-signing-key.json",
+      "signature": "GM8f9bqQcoQXhgpG0gHo5SB0k52Dt_qzxLXPuVhwbuxqhJXEz9ZrTInKWfZffSQq1j1m4akIHvpwj54ouO52DQ"
+    }
+  ],
+  "anchors": []
+}
